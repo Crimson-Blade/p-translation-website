@@ -21,13 +21,18 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-plugin-postcss',
+    "gatsby-plugin-postcss",
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+      resolye: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/products`,
+        name: `products`,
       },
     },
     {
