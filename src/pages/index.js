@@ -1,94 +1,151 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import Button from '../components/Button';
+import Card from '../components/Card';
+import CustomerCard from '../components/CustomerCard';
+import LabelText from '../components/LabelText';
+import Layout from '../components/Layout';
+import SplitSection from '../components/SplitSection';
+import StatsBox from '../components/StatsBox';
+import customerData from '../data/customer-data.jsx';
+import HeroImage from '../svg/HeroImage';
+import SvgCharts from '../svg/SvgCharts';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
-
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
-    </Layout>
-  )
-}
-
-export default BlogIndex
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="All posts" />
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
+const Index = () => (
+  <Layout>
+    <section className="pt-20 md:pt-40">
+      <div className="container mx-auto px-8 lg:flex">
+        <div className="text-center lg:text-left lg:w-1/2">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
+            Main title of your landing page
+          </h1>
+          <p className="text-xl lg:text-2xl mt-6 font-light">
+            Free landing page template to promote your business startup and generate leads for the
+            offered services
+          </p>
+          <p className="mt-8 md:mt-12">
+            <Button size="lg">Get Started</Button>
+          </p>
+          <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
+        </div>
+        <div className="lg:w-1/2">
+          <HeroImage />
+        </div>
+      </div>
+    </section>
+    <section id="features" className="py-20 lg:pb-40 lg:pt-48">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl lg:text-5xl font-semibold">Main Features</h2>
+        <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
+          <div className="flex-1 px-3">
+            <Card className="mb-8">
+              <p className="font-semibold text-xl">Service One</p>
+              <p className="mt-4">
+                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
+                velna vitae auctor integer.
+              </p>
+            </Card>
+          </div>
+          <div className="flex-1 px-3">
+            <Card className="mb-8">
+              <p className="font-semibold text-xl">Service Two</p>
+              <p className="mt-4">
+                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
+                velna vitae auctor integer.
+              </p>
+            </Card>
+          </div>
+          <div className="flex-1 px-3">
+            <Card className="mb-8">
+              <p className="font-semibold text-xl">Service Three</p>
+              <p className="mt-4">
+                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
+                velna vitae auctor integer.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+    <SplitSection
+      id="services"
+      primarySlot={
+        <div className="lg:pr-32 xl:pr-48">
+          <h3 className="text-3xl font-semibold leading-tight">Market Analysis</h3>
+          <p className="mt-8 text-xl font-light leading-relaxed">
+            Our team of enthusiastic marketers will analyse and evaluate how your company stacks
+            against the closest competitors
+          </p>
+        </div>
       }
-    }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+      secondarySlot={<SvgCharts />}
+    />
+    <SplitSection
+      reverseOrder
+      primarySlot={
+        <div className="lg:pl-32 xl:pl-48">
+          <h3 className="text-3xl font-semibold leading-tight">
+            Design And Plan Your Business Growth Steps
+          </h3>
+          <p className="mt-8 text-xl font-light leading-relaxed">
+            Once the market analysis process is completed our staff will search for opportunities
+            that are in reach
+          </p>
+        </div>
       }
-    }
-  }
-`
+      secondarySlot={<SvgCharts />}
+    />
+    <SplitSection
+      primarySlot={
+        <div className="lg:pr-32 xl:pr-48">
+          <h3 className="text-3xl font-semibold leading-tight">
+            Search For Performance Optimization
+          </h3>
+          <p className="mt-8 text-xl font-light leading-relaxed">
+            With all the information in place you will be presented with an action plan that your
+            company needs to follow
+          </p>
+        </div>
+      }
+      secondarySlot={<SvgCharts />}
+    />
+    <section id="stats" className="py-20 lg:pt-32">
+      <div className="container mx-auto text-center">
+        <LabelText className="text-gray-600">Our customers get results</LabelText>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+          <div className="w-full sm:w-1/3">
+            <StatsBox primaryText="+100%" secondaryText="Stats Information" />
+          </div>
+          <div className="w-full sm:w-1/3">
+            <StatsBox primaryText="+100%" secondaryText="Stats Information" />
+          </div>
+          <div className="w-full sm:w-1/3">
+            <StatsBox primaryText="+100%" secondaryText="Stats Information" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials" className="py-20 lg:py-40">
+      <div className="container mx-auto">
+        <LabelText className="mb-8 text-gray-600 text-center">What customers are saying</LabelText>
+        <div className="flex flex-col md:flex-row md:-mx-3">
+          {customerData.map(customer => (
+            <div key={customer.customerName} className="flex-1 px-3">
+              <CustomerCard customer={customer} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
+      <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
+      <p className="mt-8 text-xl font-light">
+        Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque fermentum dui faucibus in.
+      </p>
+      <p className="mt-8">
+        <Button size="xl">Get Started Now</Button>
+      </p>
+    </section>
+  </Layout>
+);
+
+export default Index;

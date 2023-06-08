@@ -1,5 +1,13 @@
 /* CSS Custom Properties Definitions */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* a {
+  @apply text-primary;
+}
+a:hover {
+  @apply text-primary-darker;
+} */
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
