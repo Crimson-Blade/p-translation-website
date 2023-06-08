@@ -1,36 +1,133 @@
-import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import LogoIcon from '../svg/LogoIcon';
-import Button from './Button';
+import React from "react"
+import { Link } from "gatsby"
+import { SocialIcon } from "react-social-icons"
+import { motion } from "framer-motion"
+import logo from "../../public/lifekshell-logo.png"
 
-const Header = () => (
-  <header className="sticky top-0 bg-white shadow">
-    <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
-      <div className="flex items-center text-2xl">
-        <div className="w-12 mr-3">
-          <LogoIcon />
-        </div>
-        Lander
+const Header = () => {
+  return (
+    <header className="sticky top-0  flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
+      <div className="flex w-full bg-green-950 px-2">
+        <motion.div
+          initial={{
+            x: 100,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="flex justify-between w-full  text-gray-300 cursor-pointer"
+        >
+            <div>
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <p className="uppercase hidden md:inline-flex my-auto text-sm text-gray-400 hover:underline duration-200">
+            Get In Touch!
+          </p>
+          </div>
+          <div>
+          <SocialIcon
+            className="cursor-pointer"
+            network="phone"
+            fgColor="gray"
+            bgColor="transparent"
+            />
+            <p className="uppercase hidden md:inline-flex my-auto text-sm text-gray-400 hover:underline duration-200">
+            Contact at : +91 9820076435
+            </p>
+            </div>
+        </motion.div>
       </div>
-      <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#features">
-          Features
-        </AnchorLink>
-        <AnchorLink className="px-4" href="#services">
-          Services
-        </AnchorLink>
-        <AnchorLink className="px-4" href="#stats">
-          Stats
-        </AnchorLink>
-        <AnchorLink className="px-4" href="#testimonials">
+      <div className="flex w-full justify-between bg-white shadow-lg px-2">
+      <motion.div
+        initial={{
+          x: -200,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+      >
+        <a href="/">
+          <img src={logo} alt="logo" className="h-22 w-16 ml-2" />
+        </a>
+      </motion.div>
+      <motion.div
+        initial={{
+          y: -300,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="flex flex-row items-center"
+      >
+        {/**/}
+        <Link
+          to="/AboutUs"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
+          About
+        </Link>
+        <Link
+          to="/Products"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
+          Products
+        </Link>
+        <Link
+          to="/Testimonials"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
           Testimonials
-        </AnchorLink>
-      </div>
-      <div className="hidden md:block">
-        <Button className="text-sm">Start Free Trial</Button>
-      </div>
-    </div>
-  </header>
-);
+        </Link>
+        <Link
+          to="/Brochures"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
+          Brochures
+        </Link>
+        <Link
+          to="/blog"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
+          Blog
+        </Link>
+        <Link
+          to="/Contact"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+        >
+          Contact
+        </Link>
+      </motion.div>
+      <motion.div>
 
-export default Header;
+      </motion.div>
+      </div>
+    </header>
+  )
+}
+
+export default Header
