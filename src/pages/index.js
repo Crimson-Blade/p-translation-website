@@ -9,30 +9,34 @@ import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data.jsx';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
-
+import clip from '../video/Hero-Banner-V5.mp4'
+import heroPlaceholder from '../images/Hero-Placeholder.jpg'
 const Index = () => (
   <Layout>
-    <section className="pt-20 md:pt-40">
+    <section className="flex flex-col justify-center h-screen">
+      <video autoPlay loop muted poster={heroPlaceholder} className='absolute top-0 left-0 w-full h-full object-cover object-center -z-10'>
+        <source src={clip} type='video/mp4' />
+      </video>
+      <div className='absolute left-0 top-0 w-full h-full bg-blue-950/50 -z-10' />
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-            Main title of your landing page
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-white">
+            Helping Patients And Doctors With NPWT
           </h1>
-          <p className="text-xl lg:text-2xl mt-6 font-light">
-            Free landing page template to promote your business startup and generate leads for the
-            offered services
+          <p className="text-xl lg:text-2xl mt-6 text-gray-300 font-light">
+            Create clinically, technically, and financially viable products and sell or
+            license them to commercialization partners
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg">Get Started</Button>
           </p>
-          <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
         </div>
         <div className="lg:w-1/2">
-          <HeroImage />
+          {/* <HeroImage /> */}
         </div>
       </div>
     </section>
-    <section id="features" className="py-20 lg:pb-40 lg:pt-48">
+    <section id="features" className="pb-20 lg:pb-40">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Main Features</h2>
         <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
