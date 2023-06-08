@@ -1,4 +1,4 @@
-export default [
+const arr = [
   {
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
     content:
@@ -24,3 +24,4 @@ export default [
     customerImage: 'https://placeimg.com/150/150/people'
   }
 ];
+export default arr;

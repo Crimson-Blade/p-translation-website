@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { SocialIcon } from "react-social-icons"
 import { motion } from "framer-motion"
-import logo from "../../public/lifekshell-logo.png"
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Header = () => {
   return (
@@ -65,7 +65,7 @@ const Header = () => {
         }}
       >
         <a href="/">
-          <img src={logo} alt="logo" className="h-22 w-16 ml-2" />
+          <StaticImage src="../images/lifekshell-logo.png" alt="logo" placeholder="blurred" className="h-22 w-16 ml-2" />
         </a>
       </motion.div>
       <motion.div
