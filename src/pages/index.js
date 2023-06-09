@@ -158,6 +158,7 @@ const Index = () => (
           <StaticImage
             src="../images/testimonials-quotation.svg"
             alt=""
+            layout="fixed"
             class="absolute top-3 right-10 scale-125 md:top-7 md:right-24 md:scale-150"
           />
           <div class="flex z-10 space-x-4">
