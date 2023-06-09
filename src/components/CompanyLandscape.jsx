@@ -38,11 +38,12 @@ const CompanyLandscape = () => {
           <p className='text-gray-400'>Increadible performance lmao</p>
         </div>
       </div>
+      <div className='sticky bottom-0 -z-10'>
+        <StaticImage
+          src='../images/map_temp.jpg'
+        />
+      </div>
 
-      <StaticImage
-        src='../images/map_temp.jpg'
-        className='sticky bottom-0 -z-10 '
-      />
     </div>
   )
 }
