@@ -12,8 +12,9 @@ import clip from '../video/Hero-Banner-V5.mp4'
 import heroPlaceholder from '../images/Hero-Placeholder.jpg'
 import Testimonials from '../components/Testimonials';
 import CompanyLandscape from '../components/CompanyLandscape';
-const Index = () => (
-  <Layout>
+const Index = ({location}) =>{
+return (
+  <Layout location={location}>
     <section className="flex flex-col justify-center h-screen">
       <video autoPlay loop muted poster={heroPlaceholder} className='absolute top-0 left-0 w-full h-full object-cover object-center -z-10'>
         <source src={clip} type='video/mp4' />
@@ -160,6 +161,6 @@ const Index = () => (
     </section> */}
     
   </Layout>
-);
+)};
 
 export default Index;

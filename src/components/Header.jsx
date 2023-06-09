@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons"
 import { motion } from "framer-motion"
 import { StaticImage } from 'gatsby-plugin-image'
 
-const Header = () => {
+const Header = ({pathname=''}) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  console.log(pathname);
   return (
     <header className="sticky top-0  flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
       <div className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
@@ -65,7 +66,7 @@ const Header = () => {
           </div>
         </motion.div>
       </div>
-      <div className={`${isScrolled ? "flex w-full justify-between bg-white text-gray-900 shadow-lg transition duration-300 ease-in-out px-2" : "flex w-full justify-between bg-transparent border border-gray-600 text-white transition duration-300 ease-in-out px-2"}`}>
+      <div className={`${isScrolled || pathname != '/' ? "flex w-full justify-between bg-white text-gray-900 shadow-lg transition duration-300 ease-in-out px-2" : "flex w-full justify-between bg-transparent border border-gray-600 text-white transition duration-300 ease-in-out px-2"}`}>
         <motion.div
           initial={{
             x: -200,
