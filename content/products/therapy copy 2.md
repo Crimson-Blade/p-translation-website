@@ -1,6 +1,6 @@
 ---
-title: Negative Pressure Wound Therapy PU Dressing Kits
-description: Negative pressure wound therapy dressing kits are specified dressings and accessories used as an interface between the NPWT device and the patient’s wound. 
+title: LS NPWT Canister
+description: The usual set includes 600ml capacity canister, bacteria filters and connection tubing.
 type: canister
 thumb: ../../src/images/products/canister.jpg
 ---

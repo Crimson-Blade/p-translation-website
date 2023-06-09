@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Card from "../components/Card"
+import { Card } from 'antd';
 import { graphql } from "gatsby"
-
+import Link from "antd/es/typography/Link";
+const { Meta } = Card;
 const Products = ({data}) => {
   const [selected, setSelected] = React.useState("All")
 
@@ -59,17 +60,23 @@ const Products = ({data}) => {
         </div>
 
         <div className="container mx-auto text-center flex flex-col">
-          <h2 className="text-3xl lg:text-5xl font-semibold">{selected}</h2>
-          <div className="flex gap-8">
+          <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selected}</h2>
+          <div className="flex justify-evenly gap-8">
             {products.map((product) => (
-              <Card>
-                <li key={product.id}>
-                  <img src={product.frontmatter.thumb.childImageSharp.fluid} alt={product.frontmatter.title} />
-                  <h3>{product.frontmatter.title}</h3>
-                  <p className="text-base">{product.frontmatter.description}</p>
-                  <h5>{product.frontmatter.type}</h5>
-                </li>
-              </Card>
+              <li key={product.id}>
+               <Card
+               hoverable
+               style={{
+                 width: 350,
+               }}
+               cover={<img {...product.frontmatter.thumb.childImageSharp.fluid} alt={product.frontmatter.title} />}
+             >
+               <Meta title={product.frontmatter.title} description={product.frontmatter.description} />
+               <div className="pt-6">
+               <Link href="/products" className="p-2 text-green-900 border-2 rounded-lg">View More</Link>
+               </div>
+             </Card>
+               </li>
             ))}
           </div>
         </div>

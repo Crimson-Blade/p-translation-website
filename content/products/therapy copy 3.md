@@ -1,5 +1,5 @@
 ---
-title: Negative Pressure Wound Therapy PU Dressing Kits
+title: LS Suction Track Pad
 description: Negative pressure wound therapy dressing kits are specified dressings and accessories used as an interface between the NPWT device and the patient’s wound. 
 type: Pad
 thumb: ../../src/images/products/pad.jpg
