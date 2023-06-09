@@ -2,12 +2,14 @@ import React from "react"
 import SplitSection from "../components/SplitSection"
 import SvgCharts from "../svg/SvgCharts"
 import Layout from "../components/Layout"
+import Contact from "../components/Contact"
 
 const services = ({ location}) => {
   return (
     <Layout location={location}>
+
       <div className="flex p-6 w-full justify-center">
-        <div className="text-3xl lg:text-5xl font-semibold text-center underline">
+        <div className="text-3xl lg:text-5xl font-semibold text-center tracking-wider text-slate-800">
           SERVICES
         </div>
       </div>
@@ -63,6 +65,9 @@ const services = ({ location}) => {
           secondarySlot={<SvgCharts />}
         />
       </div>
+      <Contact />
+
+      
     </Layout>
   )
 }

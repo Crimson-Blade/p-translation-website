@@ -1,7 +1,7 @@
 ---
 title: LS NPWT Canister
 description: The usual set includes 600ml capacity canister, bacteria filters and connection tubing.
-type: canister
+type: Canister
 thumb: ../../src/images/products/canister.jpg
 ---
 

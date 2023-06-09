@@ -1,18 +1,29 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import { Card } from "antd"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 const { Meta } = Card
 const Products = ({ data , location}) => {
-  const [selected, setSelected] = React.useState("All")
+  const [selectedOption, setSelectedOption] = useState("All")
 
   const handleSelectChange = event => {
-    setSelected(event.target.value)
+    setSelectedOption(event.target.value)
   }
 
   const products = data.allMarkdownRemark.nodes
+  let filteredProducts = selectedOption === "All"
+  ? products
+  : products.filter(product => product.frontmatter.type === selectedOption)
 
+  useEffect(() => {
+    console.log(selectedOption)
+    filteredProducts = selectedOption === "All"
+    ? products
+    : products.filter(product => product.frontmatter.type === selectedOption)
+    console.log(filteredProducts)
+  }, [selectedOption])
+  
   return (
     <Layout location={location}>
       <div className="h-screen ">
@@ -51,9 +62,9 @@ const Products = ({ data , location}) => {
               onChange={handleSelectChange}
             >
               <option>All</option>
-              <option>Threrapy Kits</option>
+              <option>Kit</option>
               <option>Canister</option>
-              <option>Suction Pad</option>
+              <option>Pad</option>
             </select>
           </div>
           <div className="flex px-5 w-full ">
@@ -63,9 +74,9 @@ const Products = ({ data , location}) => {
 
 
         <div className="container mx-auto text-center flex flex-col h-full w-full">
-          <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selected}</h2>
+          <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selectedOption}</h2>
           <div className="flex h-full w-full justify-evenly gap-8">
-            {products.map(product => (
+            {filteredProducts.map(product => (
               <li key={product.id}>
                 <Card
                   hoverable
@@ -111,6 +122,7 @@ export const query = graphql`
         frontmatter {
           title
           description
+          type
           thumb {
             childImageSharp {
               fluid {
