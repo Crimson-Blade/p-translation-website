@@ -11,7 +11,7 @@ import HeroImage from "../svg/HeroImage"
 import SvgCharts from "../svg/SvgCharts"
 import clip from "../video/Hero-Banner-V5.mp4"
 import heroPlaceholder from "../images/Hero-Placeholder.jpg"
-import Link from "antd/es/typography/Link"
+import { Link } from "gatsby"
 
 const Index = () => (
   <Layout>

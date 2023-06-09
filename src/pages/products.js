@@ -62,20 +62,21 @@ const Products = ({ data }) => {
         </div>
 
 
-        <div className="container mx-auto text-center flex flex-col">
+        <div className="container mx-auto text-center flex flex-col h-screen">
           <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selected}</h2>
-          <div className="flex justify-evenly gap-8">
+          <div className="flex flex-wrap justify-evenly gap-8">
             {products.map(product => (
               <li key={product.id}>
                 <Card
                   hoverable
                   style={{
-                    width: 350,
+                    width: 400,
                   }}
                   cover={
                     <img
                       {...product.frontmatter.thumb.childImageSharp.fluid}
                       alt={product.frontmatter.title}
+                      className="h-52 w-full object-cover"
                     />
                   }
                 >
