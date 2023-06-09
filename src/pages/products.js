@@ -1,39 +1,17 @@
 import React from "react"
-import Layout from "../components/Layout"
-import Card from "../components/Card"
-import { graphql, useStaticQuery } from "gatsby"
+import Layout from "../components/layout"
+import Card from "../components/card"
+import { graphql } from "gatsby"
 
-const Products = () => {
+const Products = ({data}) => {
   const [selected, setSelected] = React.useState("All")
 
   const handleSelectChange = (event) => {
     setSelected(event.target.value);
   };
 
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { sourceInstanceName: { eq: "products" } }) {
-        edges {
-          node {
-            id
-            name
-            relativePath
-            childMarkdownRemark {
-              frontmatter {
-                # Include any frontmatter fields you want to retrieve
-                title
-                date
-                description
-                type
-              }
-              excerpt
-            }
-          }
-        }
-      }
-    }
-  `)
-  const products = data.allFile.edges
+  
+  const products = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
@@ -82,13 +60,14 @@ const Products = () => {
 
         <div className="container mx-auto text-center flex flex-col">
           <h2 className="text-3xl lg:text-5xl font-semibold">{selected}</h2>
-          <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
-            {products.map(({ node }) => (
+          <div className="flex gap-8">
+            {products.map((product) => (
               <Card>
-                <li key={node.id}>
-                  <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
-                  <p className="text-base">{node.childMarkdownRemark.frontmatter.description}</p>
-                  <h5>{node.childMarkdownRemark.frontmatter.type}</h5>
+                <li key={product.id}>
+                  <img src={product.frontmatter.thumb.childImageSharp.fluid} alt={product.frontmatter.title} />
+                  <h3>{product.frontmatter.title}</h3>
+                  <p className="text-base">{product.frontmatter.description}</p>
+                  <h5>{product.frontmatter.type}</h5>
                 </li>
               </Card>
             ))}
@@ -100,3 +79,25 @@ const Products = () => {
 }
 
 export default Products
+
+export const query = graphql`
+query ProductsPage {
+    allMarkdownRemark {
+      nodes {
+        
+        frontmatter {
+          title
+          description
+          thumb {
+            childImageSharp {
+              fluid{
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        id
+      }
+    }
+  }
+`

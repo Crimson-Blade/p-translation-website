@@ -109,7 +109,7 @@ const Header = () => {
             About
           </Link>
           <Link
-            to="/Products"
+            to="/products"
             className="uppercase px-4 hidden md:inline-flex my-auto text-sm hover:underline duration-200"
           >
             Products
