@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { SocialIcon } from "react-social-icons"
 import { motion } from "framer-motion"
@@ -24,7 +24,7 @@ const Header = () => {
   }, []);
   return (
     <header className="sticky top-0  flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
-      <div className="flex w-full bg-gradient-to-r from-emerald-500 to-emerald-900 px-3">
+      <div className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
         <motion.div
           initial={{
             x: 100,
