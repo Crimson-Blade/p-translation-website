@@ -1,8 +1,8 @@
 ---
 title: Negative Pressure Wound Therapy PU Dressing Kits
 description: Negative pressure wound therapy dressing kits are specified dressings and accessories used as an interface between the NPWT device and the patient’s wound. 
-type: Belt
-
+type: canister
+thumb: ../../src/images/products/canister.jpg
 ---
 
 ## LS NPWT PU Dressing kits Consists of :
