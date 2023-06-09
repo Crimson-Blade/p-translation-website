@@ -81,6 +81,13 @@ const Header = () => {
             duration: 1,
           }}
         >
+<<<<<<< HEAD
+          About
+        </Link>
+        <Link
+          to="/products"
+          className="uppercase px-4 hidden md:inline-flex my-auto text-sm text-gray-900 hover:underline duration-200"
+=======
           <a href="/">
             <StaticImage src="../images/lifekshell-logo.png" alt="logo" placeholder="blurred" className="h-22 w-16 ml-2" />
           </a>
@@ -100,6 +107,7 @@ const Header = () => {
             duration: 1,
           }}
           className="flex flex-row items-center"
+>>>>>>> dda2658f92741b1dfcf1f9f453a8b5d8bc1f1be6
         >
           {/**/}
           <Link
