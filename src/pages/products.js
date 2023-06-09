@@ -62,9 +62,9 @@ const Products = ({ data , location}) => {
         </div>
 
 
-        <div className="container mx-auto text-center flex flex-col h-screen">
+        <div className="container mx-auto text-center flex flex-col h-full w-full">
           <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selected}</h2>
-          <div className="flex flex-wrap justify-evenly gap-8">
+          <div className="flex h-full w-full justify-evenly gap-8">
             {products.map(product => (
               <li key={product.id}>
                 <Card

@@ -3,9 +3,9 @@ import SplitSection from "../components/SplitSection"
 import SvgCharts from "../svg/SvgCharts"
 import Layout from "../components/Layout"
 
-const services = () => {
+const services = ({ location}) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="flex p-6 w-full justify-center">
         <div className="text-3xl lg:text-5xl font-semibold text-center underline">
           SERVICES
