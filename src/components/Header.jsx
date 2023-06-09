@@ -127,7 +127,7 @@ const Header = ({pathname=''}) => {
             Brochures
           </Link>
           <Link
-            to="/blog"
+            to="/blogs"
             className="uppercase px-4 hidden md:inline-flex my-auto text-sm hover:underline duration-200"
           >
             Blog

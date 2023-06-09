@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Slider from "react-slick";
+// import Slider from "react-slick";
 const LogoSlider = () => {
   // Width must be 250px, height must be 100px. Bg color must be applied to the image before hand.
   const data = useStaticQuery(graphql`
