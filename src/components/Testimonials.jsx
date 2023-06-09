@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 const Testimonials = () => {
   return (
     <div class="container mx-auto max-w-7xl p-2 md:p-10">

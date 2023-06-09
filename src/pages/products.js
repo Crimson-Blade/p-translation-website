@@ -1,18 +1,29 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import Layout from "../components/Layout"
-import Card from "../components/Card"
+import { Card } from "antd"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
+const { Meta } = Card
+const Products = ({ data , location}) => {
+  const [selectedOption, setSelectedOption] = useState("All")
 
-const Products = ({data, location}) => {
-  const [selected, setSelected] = React.useState("All")
+  const handleSelectChange = event => {
+    setSelectedOption(event.target.value)
+  }
 
-  const handleSelectChange = (event) => {
-    setSelected(event.target.value);
-  };
-
-  
   const products = data.allMarkdownRemark.nodes
+  let filteredProducts = selectedOption === "All"
+  ? products
+  : products.filter(product => product.frontmatter.type === selectedOption)
 
+  useEffect(() => {
+    console.log(selectedOption)
+    filteredProducts = selectedOption === "All"
+    ? products
+    : products.filter(product => product.frontmatter.type === selectedOption)
+    console.log(filteredProducts)
+  }, [selectedOption])
+  
   return (
     <Layout location={location}>
       <div className="h-screen ">
@@ -51,25 +62,49 @@ const Products = ({data, location}) => {
               onChange={handleSelectChange}
             >
               <option>All</option>
-              <option>Threrapy Kits</option>
+              <option>Kit</option>
               <option>Canister</option>
-              <option>Suction Pad</option>
+              <option>Pad</option>
             </select>
+          </div>
+          <div className="flex px-5 w-full ">
+            <div className="text-3xl lg:text-5xl font-semibold text-center">PRODUCTS</div>
           </div>
         </div>
 
-        <div className="container mx-auto text-center flex flex-col">
-          <h2 className="text-3xl lg:text-5xl font-semibold">{selected}</h2>
-          <div className="flex gap-8">
-            {products.map((product) => (
-              <Card>
-                <li key={product.id}>
-                  <img src={product.frontmatter.thumb.childImageSharp.fluid} alt={product.frontmatter.title} />
-                  <h3>{product.frontmatter.title}</h3>
-                  <p className="text-base">{product.frontmatter.description}</p>
-                  <h5>{product.frontmatter.type}</h5>
-                </li>
-              </Card>
+
+        <div className="container mx-auto text-center flex flex-col h-full w-full">
+          <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selectedOption}</h2>
+          <div className="flex h-full w-full justify-evenly gap-8">
+            {filteredProducts.map(product => (
+              <li key={product.id}>
+                <Card
+                  hoverable
+                  style={{
+                    width: 400,
+                  }}
+                  cover={
+                    <img
+                      {...product.frontmatter.thumb.childImageSharp.fluid}
+                      alt={product.frontmatter.title}
+                      className="h-52 w-full object-cover"
+                    />
+                  }
+                >
+                  <Meta
+                    title={product.frontmatter.title}
+                    description={product.frontmatter.description}
+                  />
+                  <div className="pt-6">
+                    <Link
+                      href="/products"
+                      className="p-2 text-green-900 border-2 rounded-lg"
+                    >
+                      View More
+                    </Link>
+                  </div>
+                </Card>
+              </li>
             ))}
           </div>
         </div>
@@ -81,16 +116,16 @@ const Products = ({data, location}) => {
 export default Products
 
 export const query = graphql`
-query ProductsPage {
+  query ProductsPage {
     allMarkdownRemark {
       nodes {
-        
         frontmatter {
           title
           description
+          type
           thumb {
             childImageSharp {
-              fluid{
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
