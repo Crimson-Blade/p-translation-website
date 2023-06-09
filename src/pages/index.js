@@ -150,12 +150,14 @@ const Index = () => (
         <Button size="xl">Get Started Now</Button>
       </p>
     </section>
-    <section className='py-20'>
+    <section className='mx-auto py-20  text-center'>
       <CompanyLandscape />
+      <div className='bg-white -translate-y-[200px]'>
+      <Testimonials/>
+      </div>
     </section>
-    <section className='py-20'>
-    <Testimonials />
-    </section>
+    {/* <section className='py-20'>
+    </section> */}
     
   </Layout>
 );

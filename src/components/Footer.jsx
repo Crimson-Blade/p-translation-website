@@ -3,7 +3,7 @@ import {SocialIcon} from "react-social-icons";
 
 const Footer = () => {
   return (
-    <section className="bg-green-950 text-gray-50">
+    <section className="bg-gradient-to-r from-teal-700 to-sky-900 text-gray-50">
       <div className="max-w-screen-xl px-4 py-6 mx-auto space-y-3 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2 pt-4">
           <div className="px-5 py-2">
