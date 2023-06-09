@@ -12,6 +12,7 @@ import clip from '../video/Hero-Banner-V5.mp4'
 import heroPlaceholder from '../images/Hero-Placeholder.jpg'
 import Testimonials from '../components/Testimonials';
 import CompanyLandscape from '../components/CompanyLandscape';
+import LogoSlider from '../components/LogoSlider';
 const Index = ({location}) =>{
 return (
   <Layout location={location}>
@@ -130,18 +131,8 @@ return (
         </div>
       </div>
     </section>
-    <section id="testimonials" className="py-20 lg:py-40">
-      <div className="container mx-auto">
-        <LabelText className="mb-8 text-gray-600 text-center">What customers are saying</LabelText>
-        <div className="flex flex-col md:flex-row md:-mx-3">
-          {customerData.map(customer => (
-            <div key={customer.customerName} className="flex-1 px-3">
-              <CustomerCard customer={customer} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    ###LOGOSLIDERHERE###
+      <LogoSlider />
     <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
       <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
       <p className="mt-8 text-xl font-light">
@@ -154,7 +145,7 @@ return (
     <section className='mx-auto py-20  text-center'>
       <CompanyLandscape />
       <div className='bg-white -translate-y-[200px]'>
-      <Testimonials/>
+        <Testimonials/> 
       </div>
     </section>
     {/* <section className='py-20'>

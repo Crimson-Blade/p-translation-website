@@ -22,7 +22,6 @@ const Header = ({pathname=''}) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(pathname);
   return (
     <header className="sticky top-0  flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
       <div className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
