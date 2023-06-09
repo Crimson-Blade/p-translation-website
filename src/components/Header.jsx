@@ -82,9 +82,9 @@ const Header = ({pathname=''}) => {
             duration: 1,
           }}
         >
-          <a href="/">
+          <Link to="/">
             <StaticImage src="../images/lifekshell-logo.png" alt="logo" placeholder="blurred" className="h-22 w-16 ml-2" />
-          </a>
+          </Link>
         </motion.div>
         <motion.div
           initial={{
