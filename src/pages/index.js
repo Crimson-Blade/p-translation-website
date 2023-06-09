@@ -1,83 +1,207 @@
-import React from 'react';
-import Button from '../components/Button';
-import Card from '../components/Card';
-import CustomerCard from '../components/CustomerCard';
-import LabelText from '../components/LabelText';
-import Layout from '../components/Layout';
-import SplitSection from '../components/SplitSection';
-import StatsBox from '../components/StatsBox';
-import customerData from '../data/customer-data.jsx';
-import HeroImage from '../svg/HeroImage';
-import SvgCharts from '../svg/SvgCharts';
-import clip from '../video/Hero-Banner-V5.mp4'
-import heroPlaceholder from '../images/Hero-Placeholder.jpg'
+import React from "react"
+import Button from "../components/Button"
+import Card from "../components/Card"
+import CustomerCard from "../components/CustomerCard"
+import LabelText from "../components/LabelText"
+import Layout from "../components/Layout"
+import SplitSection from "../components/SplitSection"
+import StatsBox from "../components/StatsBox"
+import customerData from "../data/customer-data.jsx"
+import HeroImage from "../svg/HeroImage"
+import SvgCharts from "../svg/SvgCharts"
+import clip from "../video/Hero-Banner-V5.mp4"
+import heroPlaceholder from "../images/Hero-Placeholder.jpg"
+import Link from "antd/es/typography/Link"
+
 const Index = () => (
   <Layout>
     <section className="flex flex-col justify-center h-screen">
-      <video autoPlay loop muted poster={heroPlaceholder} className='absolute top-0 left-0 w-full h-full object-cover object-center -z-10'>
-        <source src={clip} type='video/mp4' />
+      <video
+        autoPlay
+        loop
+        muted
+        poster={heroPlaceholder}
+        className="absolute top-0 left-0 w-full h-full object-cover object-center -z-10"
+      >
+        <source src={clip} type="video/mp4" />
       </video>
-      <div className='absolute left-0 top-0 w-full h-full bg-sky-900/30 -z-10' />
+      <div className="absolute left-0 top-0 w-full h-full bg-sky-900/30 -z-10" />
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-white">
             Helping Patients And Doctors With NPWT
           </h1>
           <p className="text-xl lg:text-2xl mt-6 text-gray-300 font-light">
-            Create clinically, technically, and financially viable products and sell or
-            license them to commercialization partners
+            Create clinically, technically, and financially viable products and
+            sell or license them to commercialization partners
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg">Get Started</Button>
           </p>
         </div>
-        <div className="lg:w-1/2">
-          {/* <HeroImage /> */}
+        <div className="lg:w-1/2">{/* <HeroImage /> */}</div>
+      </div>
+    </section>
+
+    <section id="features" className="pb-20 lg:pb-40 bg-white ">
+      <div className="container px-6 py-10 mx-auto">
+        <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-5xl ">
+          explore our <br />{" "}
+          <span className="underline decoration-blue-500">Services</span>
+        </h1>
+
+        <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-900">
+          Explore our exceptional services, incorporating NPWT solutions.
+        </p>
+
+        <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+          <div className="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <span className="inline-block text-blue-500 dark:text-blue-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                viewBox="0 0 512 512"
+                fill="#4388fe"
+                stroke="currentColor"
+              >
+                <path d="M96 352V96c0-35.3 28.7-64 64-64H416c35.3 0 64 28.7 64 64V293.5c0 17-6.7 33.3-18.7 45.3l-58.5 58.5c-12 12-28.3 18.7-45.3 18.7H160c-35.3 0-64-28.7-64-64zM272 128c-8.8 0-16 7.2-16 16v48H208c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V256h48c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H320V144c0-8.8-7.2-16-16-16H272zm24 336c13.3 0 24 10.7 24 24s-10.7 24-24 24H136C60.9 512 0 451.1 0 376V152c0-13.3 10.7-24 24-24s24 10.7 24 24l0 224c0 48.6 39.4 88 88 88H296z" />
+              </svg>
+            </span>
+
+            <h1 className="text-2xl font-semibold text-gray-700 capitalize ">
+              dressing services
+            </h1>
+
+            <p className="text-gray-500 dark:text-gray-900">
+              "Delivering personalized dressing services for optimal wound care
+              and accelerated healing."
+            </p>
+
+            <a
+              href="#"
+              className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div className="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <span className="inline-block text-blue-500 dark:text-blue-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                viewBox="0 0 640 512"
+                fill="#4388fe"
+                stroke="currentColor"
+              >
+                <path d="M0 48C0 21.5 21.5 0 48 0H368c26.5 0 48 21.5 48 48V96h50.7c17 0 33.3 6.7 45.3 18.7L589.3 192c12 12 18.7 28.3 18.7 45.3V256v32 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H576c0 53-43 96-96 96s-96-43-96-96H256c0 53-43 96-96 96s-96-43-96-96H48c-26.5 0-48-21.5-48-48V48zM416 256H544V237.3L466.7 160H416v96zM160 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm368-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM176 80v48l-48 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V192h48c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H240V80c0-8.8-7.2-16-16-16H192c-8.8 0-16 7.2-16 16z" />
+              </svg>
+            </span>
+
+            <h1 className="text-2xl font-semibold text-gray-700 capitalize ">
+              Distribution
+            </h1>
+
+            <p className="text-gray-500 dark:text-gray-900">
+              "Efficiently distributing NPWT products and medical supplies for
+              seamless access to critical resources."
+            </p>
+
+            <a
+              href="#"
+              className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div className="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <span className="inline-block text-blue-500 dark:text-blue-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="#4388fe"
+                stroke="currentColor"
+                viewBox="0 0 512 512"
+              >
+                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zm96 152c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H288v48c0 8.8-7.2 16-16 16H240c-8.8 0-16-7.2-16-16V320H176c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h48V208z" />
+              </svg>
+            </span>
+
+            <h1 className="text-2xl font-semibold text-gray-700 capitalize ">
+              Hospital Supplies
+            </h1>
+
+            <p className="text-gray-500 dark:text-gray-900">
+              "Supplying a comprehensive range of high-quality hospital supplies
+              for exceptional patient care."
+            </p>
+
+            <a
+              href="#"
+              className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div className="mt-4 p-2 w-full flex justify-center items-center bg-slate-300 rounded-lg">
+          <Link to="/services">
+            <Button>Explore all of our Services</Button>
+          </Link>
         </div>
       </div>
     </section>
-    <section id="features" className="pb-20 lg:pb-40">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-5xl font-semibold">Main Features</h2>
-        <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Service One</p>
-              <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
-                velna vitae auctor integer.
-              </p>
-            </Card>
-          </div>
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Service Two</p>
-              <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
-                velna vitae auctor integer.
-              </p>
-            </Card>
-          </div>
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Service Three</p>
-              <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
-                velna vitae auctor integer.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <SplitSection
       id="services"
       primarySlot={
         <div className="lg:pr-32 xl:pr-48">
-          <h3 className="text-3xl font-semibold leading-tight">Market Analysis</h3>
+          <h3 className="text-3xl font-semibold leading-tight">
+            Market Analysis
+          </h3>
           <p className="mt-8 text-xl font-light leading-relaxed">
-            Our team of enthusiastic marketers will analyse and evaluate how your company stacks
-            against the closest competitors
+            Our team of enthusiastic marketers will analyse and evaluate how
+            your company stacks against the closest competitors
           </p>
         </div>
       }
@@ -91,8 +215,8 @@ const Index = () => (
             Design And Plan Your Business Growth Steps
           </h3>
           <p className="mt-8 text-xl font-light leading-relaxed">
-            Once the market analysis process is completed our staff will search for opportunities
-            that are in reach
+            Once the market analysis process is completed our staff will search
+            for opportunities that are in reach
           </p>
         </div>
       }
@@ -105,8 +229,8 @@ const Index = () => (
             Search For Performance Optimization
           </h3>
           <p className="mt-8 text-xl font-light leading-relaxed">
-            With all the information in place you will be presented with an action plan that your
-            company needs to follow
+            With all the information in place you will be presented with an
+            action plan that your company needs to follow
           </p>
         </div>
       }
@@ -114,7 +238,9 @@ const Index = () => (
     />
     <section id="stats" className="py-20 lg:pt-32">
       <div className="container mx-auto text-center">
-        <LabelText className="text-gray-600">Our customers get results</LabelText>
+        <LabelText className="text-gray-600">
+          Our customers get results
+        </LabelText>
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
           <div className="w-full sm:w-1/3">
             <StatsBox primaryText="+100%" secondaryText="Stats Information" />
@@ -130,7 +256,9 @@ const Index = () => (
     </section>
     <section id="testimonials" className="py-20 lg:py-40">
       <div className="container mx-auto">
-        <LabelText className="mb-8 text-gray-600 text-center">What customers are saying</LabelText>
+        <LabelText className="mb-8 text-gray-600 text-center">
+          What customers are saying
+        </LabelText>
         <div className="flex flex-col md:flex-row md:-mx-3">
           {customerData.map(customer => (
             <div key={customer.customerName} className="flex-1 px-3">
@@ -143,210 +271,207 @@ const Index = () => (
     <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
       <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
       <p className="mt-8 text-xl font-light">
-        Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque fermentum dui faucibus in.
+        Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque
+        fermentum dui faucibus in.
       </p>
       <p className="mt-8">
         <Button size="xl">Get Started Now</Button>
       </p>
     </section>
-    <section className='py-20'>
-    <div class="container mx-auto max-w-7xl p-2 md:p-10">
-      <div
-        class="grid gap-6 grid-cols-1 text-white md:grid-cols-4 md:grid-rows-2"
-      >
-        <div class="relative p-10 rounded-xl bg-purple-700 md:col-span-2">
-          <img
-            src="../images/bg-pattern-quotation.svg"
-            alt=""
-            class="absolute top-3 right-10 scale-125 md:top-7 md:right-24 md:scale-150"
-          />
-          <div class="flex z-10 space-x-4">
+    <section className="py-20">
+      <div class="container mx-auto max-w-7xl p-2 md:p-10">
+        <div class="grid gap-6 grid-cols-1 text-white md:grid-cols-4 md:grid-rows-2">
+          <div class="relative p-10 rounded-xl bg-purple-700 md:col-span-2">
             <img
-              src="images/image-daniel.jpg"
+              src="../images/bg-pattern-quotation.svg"
               alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              class="absolute top-3 right-10 scale-125 md:top-7 md:right-24 md:scale-150"
             />
-            <div class="text-sm">
-              <h4 class="opacity-90">Daniel Clifford</h4>
-              <p class="opacity-50">Verified Graduate</p>
+            <div class="flex z-10 space-x-4">
+              <img
+                src="images/image-daniel.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Daniel Clifford</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="relative z-10 mt-6 text-xl">
+              I received a job offer mid-course, and the subjects I learned were
+              current, if not more so, in the company I joined. I honestly feel
+              I got every penny's worth.
+            </p>
+
+            <p class="mt-6 opacity-50 line-clamp-6">
+              "I was an EMT for many years before I joined the bootcamp. I've
+              been looking to make a transition and have heard some people who
+              had an amazing experience here. I signed up for the free intro
+              course and found it incredibly fun! I enrolled shortly thereafter.
+              The next 12 weeks was the best - and most grueling - time of my
+              life. Since completing the course, I've successfully switched
+              careers, working as a Software Engineer at a VR startup. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Ratione vero
+              repudiandae, quasi atque officiis eum consectetur odio amet
+              dolorem deleniti repellat expedita aut sunt laudantium cum itaque
+              nam voluptatum quod! Quo totam sequi omnis deserunt? Sit nam
+              molestiae excepturi, perspiciatis labore deleniti eum, eligendi
+              quisquam quod sed nobis exercitationem tempora! "
+            </p>
           </div>
 
-          <p class="relative z-10 mt-6 text-xl">
-            I received a job offer mid-course, and the subjects I learned were
-            current, if not more so, in the company I joined. I honestly feel I
-            got every penny's worth.
-          </p>
-
-          <p class="mt-6 opacity-50 line-clamp-6">
-            "I was an EMT for many years before I joined the bootcamp. I've been
-            looking to make a transition and have heard some people who had an
-            amazing experience here. I signed up for the free intro course and
-            found it incredibly fun! I enrolled shortly thereafter. The next 12
-            weeks was the best - and most grueling - time of my life. Since
-            completing the course, I've successfully switched careers, working
-            as a Software Engineer at a VR startup. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Ratione vero repudiandae, quasi atque
-            officiis eum consectetur odio amet dolorem deleniti repellat
-            expedita aut sunt laudantium cum itaque nam voluptatum quod! Quo
-            totam sequi omnis deserunt? Sit nam molestiae excepturi,
-            perspiciatis labore deleniti eum, eligendi quisquam quod sed nobis
-            exercitationem tempora! "
-          </p>
-        </div>
-
-        <div class="p-10 rounded-xl bg-gray-600">
-          <div class="flex space-x-4">
-            <img
-              src="images/image-jonathan.jpg"
-              alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
-            />
-            <div class="text-sm">
-              <h4 class="opacity-90">Jonathan Walters</h4>
-              <p class="opacity-50">Verified Graduate</p>
+          <div class="p-10 rounded-xl bg-gray-600">
+            <div class="flex space-x-4">
+              <img
+                src="images/image-jonathan.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Jonathan Walters</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="mt-6 text-xl">
+              The team was very supportive and kept me motivated
+            </p>
+
+            <p class="mt-6 opacity-50 line-clamp-5">
+              "I started as a total newbie with virtually no coding skills. I
+              now work as a mobile engineer for a big company. This was one of
+              the best investments I've made in myself. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Atque ipsam veritatis natus
+              illum ullam ab, nesciunt rerum nobis, quibusdam ad voluptatum rem
+              necessitatibus facere nihil deleniti assumenda vel velit neque
+              quia, nisi ipsum laudantium impedit eveniet iste. Pariatur,
+              exercitationem consequuntur praesentium a est eum velit quos
+              maiores ipsum facere tempora! "
+            </p>
           </div>
 
-          <p class="mt-6 text-xl">
-            The team was very supportive and kept me motivated
-          </p>
-
-          <p class="mt-6 opacity-50 line-clamp-5">
-            "I started as a total newbie with virtually no coding skills. I now
-            work as a mobile engineer for a big company. This was one of the
-            best investments I've made in myself. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Atque ipsam veritatis natus illum
-            ullam ab, nesciunt rerum nobis, quibusdam ad voluptatum rem
-            necessitatibus facere nihil deleniti assumenda vel velit neque quia,
-            nisi ipsum laudantium impedit eveniet iste. Pariatur, exercitationem
-            consequuntur praesentium a est eum velit quos maiores ipsum facere
-            tempora! "
-          </p>
-        </div>
-
-        <div
-          class="hidden p-10 rounded-xl text-gray-900 bg-white md:block md:row-span-2"
-        >
-          <div class="flex space-x-4">
-            <img
-              src="images/image-kira.jpg"
-              alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
-            />
-            <div class="text-sm">
-              <h4 class="opacity-90">Kira Whittle</h4>
-              <p class="opacity-50">Verified Graduate</p>
+          <div class="hidden p-10 rounded-xl text-gray-900 bg-white md:block md:row-span-2">
+            <div class="flex space-x-4">
+              <img
+                src="images/image-kira.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Kira Whittle</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="mt-6 text-xl">
+              Such a life-changing experience. Highly recommended!
+            </p>
+            <p class="mt-6 opacity-50">
+              "Before joining the bootcamp, I've never written a line of code. I
+              needed some structure from professionals who can help me learn
+              programming step by step. I was encouraged to enroll by a former
+              student of theirs who can only say wonderful things about the
+              program. The entire curriculum and staff did not disappoint. They
+              were very hands-on and I never had to wait long for assistance.
+              The agile team project, in particular, was outstanding. It took my
+              learning to the next level in a way that no tutorial could ever
+              have. In fact, I've often referred to it during interviews as an
+              example of my developent experience. It certainly helped me land a
+              job as a full-stack developer after receiving multiple offers.
+              100% recommend!"
+            </p>
           </div>
 
-          <p class="mt-6 text-xl">
-            Such a life-changing experience. Highly recommended!
-          </p>
-          <p class="mt-6 opacity-50">
-            "Before joining the bootcamp, I've never written a line of code. I
-            needed some structure from professionals who can help me learn
-            programming step by step. I was encouraged to enroll by a former
-            student of theirs who can only say wonderful things about the
-            program. The entire curriculum and staff did not disappoint. They
-            were very hands-on and I never had to wait long for assistance. The
-            agile team project, in particular, was outstanding. It took my
-            learning to the next level in a way that no tutorial could ever
-            have. In fact, I've often referred to it during interviews as an
-            example of my developent experience. It certainly helped me land a
-            job as a full-stack developer after receiving multiple offers. 100%
-            recommend!"
-          </p>
-        </div>
-
-        <div class="p-10 rounded-xl text-gray-900 bg-white">
-          <div class="flex space-x-4">
-            <img
-              src="images/image-jeanette.jpg"
-              alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
-            />
-            <div class="text-sm">
-              <h4 class="opacity-90">Jeanette Harmon</h4>
-              <p class="opacity-50">Verified Graduate</p>
+          <div class="p-10 rounded-xl text-gray-900 bg-white">
+            <div class="flex space-x-4">
+              <img
+                src="images/image-jeanette.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Jeanette Harmon</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="mt-6 text-xl">
+              An overall wonderful and rewarding experience
+            </p>
+
+            <p class="mt-6 opacity-50">
+              "Thank you for the wonderful experience! I now have a job I really
+              enjoy, and make a good living while doing something I love."
+            </p>
           </div>
 
-          <p class="mt-6 text-xl">
-            An overall wonderful and rewarding experience
-          </p>
-
-          <p class="mt-6 opacity-50">
-            "Thank you for the wonderful experience! I now have a job I really
-            enjoy, and make a good living while doing something I love."
-          </p>
-        </div>
-
-        <div class="p-10 rounded-xl bg-gray-900 md:col-span-2">
-          <div class="flex space-x-4">
-            <img
-              src="images/image-patrick.jpg"
-              alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
-            />
-            <div class="text-sm">
-              <h4 class="opacity-90">Patrick Abrams</h4>
-              <p class="opacity-50">Verified Graduate</p>
+          <div class="p-10 rounded-xl bg-gray-900 md:col-span-2">
+            <div class="flex space-x-4">
+              <img
+                src="images/image-patrick.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Patrick Abrams</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="mt-6 text-xl">
+              Awesome teaching support from TAs who did the bootcamp themselves.
+              Getting guidance from them and learning from their experiences was
+              easy.
+            </p>
+
+            <p class="mt-6 opacity-50">
+              "The staff seem genuinely concerned about my progress which I find
+              really refreshing. The program gave me the confidence necessary to
+              be able to go out in the world and present myself as a capable
+              junior developer. The standard is above the rest. You will get the
+              personal attention you need from an incredible community of smart
+              and amazing people."
+            </p>
           </div>
 
-          <p class="mt-6 text-xl">
-            Awesome teaching support from TAs who did the bootcamp themselves.
-            Getting guidance from them and learning from their experiences was
-            easy.
-          </p>
-
-          <p class="mt-6 opacity-50">
-            "The staff seem genuinely concerned about my progress which I find
-            really refreshing. The program gave me the confidence necessary to
-            be able to go out in the world and present myself as a capable
-            junior developer. The standard is above the rest. You will get the
-            personal attention you need from an incredible community of smart
-            and amazing people."
-          </p>
-        </div>
-
-        <div class="p-10 rounded-xl text-gray-900 bg-white md:hidden">
-          <div class="flex space-x-4">
-            <img
-              src="images/image-kira.jpg"
-              alt=""
-              class="w-10 h-10 rounded-full ring-2 ring-purple-300"
-            />
-            <div class="text-sm">
-              <h4 class="opacity-90">Kira Whittle</h4>
-              <p class="opacity-50">Verified Graduate</p>
+          <div class="p-10 rounded-xl text-gray-900 bg-white md:hidden">
+            <div class="flex space-x-4">
+              <img
+                src="images/image-kira.jpg"
+                alt=""
+                class="w-10 h-10 rounded-full ring-2 ring-purple-300"
+              />
+              <div class="text-sm">
+                <h4 class="opacity-90">Kira Whittle</h4>
+                <p class="opacity-50">Verified Graduate</p>
+              </div>
             </div>
+
+            <p class="mt-6 text-xl">
+              Such a life-changing experience. Highly recommended!
+            </p>
+
+            <p class="mt-6 opacity-50">
+              "Before joining the bootcamp, I've never written a line of code. I
+              needed some structure from professionals who can help me learn
+              programming step by step. I was encouraged to enroll by a former
+              student of theirs who can only say wonderful things about the
+              program. The entire curriculum and staff did not disappoint. They
+              were very hands-on and I never had to wait long for assistance.
+              The agile team project, in particular, was outstanding. It took my
+              learning to the next level in a way that no tutorial could ever
+              have. In fact, I've often referred to it during interviews as an
+              example of my developent experience. It certainly helped me land a
+              job as a full-stack developer after receiving multiple offers.
+              100% recommend!"
+            </p>
           </div>
-
-          <p class="mt-6 text-xl">
-            Such a life-changing experience. Highly recommended!
-          </p>
-
-          <p class="mt-6 opacity-50">
-            "Before joining the bootcamp, I've never written a line of code. I
-            needed some structure from professionals who can help me learn
-            programming step by step. I was encouraged to enroll by a former
-            student of theirs who can only say wonderful things about the
-            program. The entire curriculum and staff did not disappoint. They
-            were very hands-on and I never had to wait long for assistance. The
-            agile team project, in particular, was outstanding. It took my
-            learning to the next level in a way that no tutorial could ever
-            have. In fact, I've often referred to it during interviews as an
-            example of my developent experience. It certainly helped me land a
-            job as a full-stack developer after receiving multiple offers. 100%
-            recommend!"
-          </p>
         </div>
       </div>
-    </div>
     </section>
   </Layout>
-);
+)
 
-export default Index;
+export default Index

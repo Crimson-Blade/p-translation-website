@@ -115,10 +115,10 @@ const Header = () => {
             Products
           </Link>
           <Link
-            to="/Testimonials"
+            to="/services"
             className="uppercase px-4 hidden md:inline-flex my-auto text-sm hover:underline duration-200"
           >
-            Testimonials
+            Services
           </Link>
           <Link
             to="/Brochures"
@@ -133,10 +133,10 @@ const Header = () => {
             Blog
           </Link>
           <Link
-            to="/Contact"
+            to="/Testimonials"
             className="uppercase px-4 hidden md:inline-flex my-auto text-sm hover:underline duration-200"
           >
-            Contact
+            Testimonials
           </Link>
         </motion.div>
         <motion.div>

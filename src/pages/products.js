@@ -1,17 +1,16 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { Card } from 'antd';
+import { Card } from "antd"
 import { graphql } from "gatsby"
-import Link from "antd/es/typography/Link";
-const { Meta } = Card;
-const Products = ({data}) => {
+import Link from "antd/es/typography/Link"
+const { Meta } = Card
+const Products = ({ data }) => {
   const [selected, setSelected] = React.useState("All")
 
-  const handleSelectChange = (event) => {
-    setSelected(event.target.value);
-  };
+  const handleSelectChange = event => {
+    setSelected(event.target.value)
+  }
 
-  
   const products = data.allMarkdownRemark.nodes
 
   return (
@@ -57,26 +56,43 @@ const Products = ({data}) => {
               <option>Suction Pad</option>
             </select>
           </div>
+          <div className="flex px-5 w-full ">
+            <div className="text-3xl lg:text-5xl font-semibold text-center">PRODUCTS</div>
+          </div>
         </div>
+
 
         <div className="container mx-auto text-center flex flex-col">
           <h2 className="text-3xl lg:text-5xl font-semibold p-4">{selected}</h2>
           <div className="flex justify-evenly gap-8">
-            {products.map((product) => (
+            {products.map(product => (
               <li key={product.id}>
-               <Card
-               hoverable
-               style={{
-                 width: 350,
-               }}
-               cover={<img {...product.frontmatter.thumb.childImageSharp.fluid} alt={product.frontmatter.title} />}
-             >
-               <Meta title={product.frontmatter.title} description={product.frontmatter.description} />
-               <div className="pt-6">
-               <Link href="/products" className="p-2 text-green-900 border-2 rounded-lg">View More</Link>
-               </div>
-             </Card>
-               </li>
+                <Card
+                  hoverable
+                  style={{
+                    width: 350,
+                  }}
+                  cover={
+                    <img
+                      {...product.frontmatter.thumb.childImageSharp.fluid}
+                      alt={product.frontmatter.title}
+                    />
+                  }
+                >
+                  <Meta
+                    title={product.frontmatter.title}
+                    description={product.frontmatter.description}
+                  />
+                  <div className="pt-6">
+                    <Link
+                      href="/products"
+                      className="p-2 text-green-900 border-2 rounded-lg"
+                    >
+                      View More
+                    </Link>
+                  </div>
+                </Card>
+              </li>
             ))}
           </div>
         </div>
@@ -88,16 +104,15 @@ const Products = ({data}) => {
 export default Products
 
 export const query = graphql`
-query ProductsPage {
+  query ProductsPage {
     allMarkdownRemark {
       nodes {
-        
         frontmatter {
           title
           description
           thumb {
             childImageSharp {
-              fluid{
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
