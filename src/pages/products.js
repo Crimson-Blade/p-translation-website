@@ -2,9 +2,9 @@ import React from "react"
 import Layout from "../components/Layout"
 import { Card } from "antd"
 import { graphql } from "gatsby"
-import Link from "antd/es/typography/Link"
+import { Link } from "gatsby"
 const { Meta } = Card
-const Products = ({ data }) => {
+const Products = ({ data , location}) => {
   const [selected, setSelected] = React.useState("All")
 
   const handleSelectChange = event => {
@@ -14,7 +14,7 @@ const Products = ({ data }) => {
   const products = data.allMarkdownRemark.nodes
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="h-screen ">
         <div className="flex p-4">
           <form className="max-w-sm px-4">
