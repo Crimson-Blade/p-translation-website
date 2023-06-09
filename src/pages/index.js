@@ -7,10 +7,10 @@ import Layout from '../components/Layout';
 import SplitSection from '../components/SplitSection';
 import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data.jsx';
-import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 import clip from '../video/Hero-Banner-V5.mp4'
 import heroPlaceholder from '../images/Hero-Placeholder.jpg'
+import { StaticImage } from 'gatsby-plugin-image';
 const Index = () => (
   <Layout>
     <section className="flex flex-col justify-center h-screen">
@@ -155,8 +155,8 @@ const Index = () => (
         class="grid gap-6 grid-cols-1 text-white md:grid-cols-4 md:grid-rows-2"
       >
         <div class="relative p-10 rounded-xl bg-purple-700 md:col-span-2">
-          <img
-            src="../images/bg-pattern-quotation.svg"
+          <StaticImage
+            src="../images/testimonials-quotation.svg"
             alt=""
             class="absolute top-3 right-10 scale-125 md:top-7 md:right-24 md:scale-150"
           />
@@ -167,7 +167,7 @@ const Index = () => (
               class="w-10 h-10 rounded-full ring-2 ring-purple-300"
             />
             <div class="text-sm">
-              <h4 class="opacity-90">Daniel Clifford</h4>
+              <h4 class="opacity-90 text-white">Daniel Clifford</h4>
               <p class="opacity-50">Verified Graduate</p>
             </div>
           </div>
@@ -203,7 +203,7 @@ const Index = () => (
               class="w-10 h-10 rounded-full ring-2 ring-purple-300"
             />
             <div class="text-sm">
-              <h4 class="opacity-90">Jonathan Walters</h4>
+              <h4 class="opacity-90 text-white">Jonathan Walters</h4>
               <p class="opacity-50">Verified Graduate</p>
             </div>
           </div>
@@ -226,7 +226,7 @@ const Index = () => (
         </div>
 
         <div
-          class="hidden p-10 rounded-xl text-gray-900 bg-white md:block md:row-span-2"
+          class="hidden p-10 rounded-xl text-gray-900 bg-sky-200 md:block md:row-span-2"
         >
           <div class="flex space-x-4">
             <img
@@ -259,7 +259,7 @@ const Index = () => (
           </p>
         </div>
 
-        <div class="p-10 rounded-xl text-gray-900 bg-white">
+        <div class="p-10 rounded-xl text-gray-900 bg-sky-200">
           <div class="flex space-x-4">
             <img
               src="images/image-jeanette.jpg"
@@ -290,7 +290,7 @@ const Index = () => (
               class="w-10 h-10 rounded-full ring-2 ring-purple-300"
             />
             <div class="text-sm">
-              <h4 class="opacity-90">Patrick Abrams</h4>
+              <h4 class="opacity-90 text-white">Patrick Abrams</h4>
               <p class="opacity-50">Verified Graduate</p>
             </div>
           </div>
@@ -311,7 +311,7 @@ const Index = () => (
           </p>
         </div>
 
-        <div class="p-10 rounded-xl text-gray-900 bg-white md:hidden">
+        <div class="p-10 rounded-xl text-gray-900 bg-sky-200 md:hidden">
           <div class="flex space-x-4">
             <img
               src="images/image-kira.jpg"
