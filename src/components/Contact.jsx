@@ -31,7 +31,7 @@ const Contact = () => {
                 </svg>
               </div>
               <p className="pl-4 inline text-white text-base">
-                +1 (308) 321 321
+              91 9820076435
               </p>
               <div className="ml-14">
                 <svg
@@ -67,7 +67,7 @@ const Contact = () => {
                   <polyline points="3 7 12 13 21 7" />
                 </svg>
               </div>
-              <p className="pl-4 text-white text-base">Info@alphas.com</p>
+              <p className="pl-4 text-white text-base">lifekshell@gmail.com</p>
             </div>
             <p className="text-lg text-white pt-10 tracking-wide">
               <span className="underline leading-5">Our Location </span>

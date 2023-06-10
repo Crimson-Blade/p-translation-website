@@ -71,13 +71,16 @@ export default BlogIndex
 export const Head = () => <Seo title="All posts" />
 
 export const pageQuery = graphql`
-  {
+  query BlogsPage {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
+    ) {
       nodes {
         excerpt
         fields {

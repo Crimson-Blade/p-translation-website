@@ -11,8 +11,8 @@ const about = ({ location }) => {
         <p className="font-normal leading-3 cursor-pointer text-green-500">WHO WE ARE</p>
         <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
           <div className="w-full lg:w-1/2">
-            <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">
-              About LIFE kSHELL
+            <h2 className="w-full lg:text-4xl text-3xl lg:leading-10 leading-9 font-normal">
+              About <span className="text-green-500 font-semibold">LIFE kSHELL</span>
             </h2>
             <p className="font-normal text-base  text-gray-600 mt-6">
               LIFE kSHELL is committed for Excellence by everyway, in everything

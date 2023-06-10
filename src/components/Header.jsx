@@ -3,10 +3,67 @@ import { Link } from "gatsby"
 import { SocialIcon } from "react-social-icons"
 import { motion } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
+import { Dropdown, Space } from "antd"
 
 const Header = ({ pathname = "" }) => {
+  const items = [
+    {
+      label: (
+        <Link
+          to="/about"
+          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        >
+          About
+        </Link>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <Link
+          to="/products"
+          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        >
+          Products
+        </Link>
+      ),
+      key: "1",
+    },
+    {
+      label: (
+        <Link
+          to="/services"
+          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        >
+          Services
+        </Link>
+      ),
+      key: "2",
+    },
+    {
+      label: (
+        <Link
+          to="/blogs"
+          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        >
+          Blog
+        </Link>
+      ),
+      key: "3",
+    },
+    {
+      label: (
+        <Link
+          to="/testimonialspage"
+          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        >
+          Testimonials
+        </Link>
+      ),
+      key: "4",
+    },
+  ]
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     function handleScroll() {
@@ -24,9 +81,6 @@ const Header = ({ pathname = "" }) => {
     }
   }, [])
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
 
   return (
     <header className="sticky top-0 flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
@@ -139,90 +193,42 @@ const Header = ({ pathname = "" }) => {
               Services
             </Link>
             <Link
-              to="/Brochures"
-              className="uppercase px-4 my-auto text-sm hover:underline duration-200"
-            >
-              Brochures
-            </Link>
-            <Link
-              to="/blog"
+              to="/blogs"
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
               Blog
             </Link>
             <Link
-              to="/Testimonials"
+              to="/testimonialspage"
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
               Testimonials
             </Link>
           </nav>
           <div className="md:hidden right-0 ">
-            <button
-              className="text-gray-900 focus:outline-none "
-              onClick={toggleMenu}
+            <Dropdown
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="h-6 w-6"
-              >
-                {isMenuOpen ? (
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M2 4h16v1H2V4zm0 6h16v1H2v-1zm0 6h16v1H2v-1z"
-                  />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M4 5h12v1H4V5zm0 4h12v1H4v-1zm0 4h12v1H4v-1z"
-                  />
-                )}
-              </svg>
-            </button>
-            {isMenuOpen && (
-              <div className="bg-white absolute top-12 right-0 w-48 mt-2 py-2 rounded-md shadow-lg z-10">
-                <Link
-                  to="/about"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/products"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Products
-                </Link>
-                <Link
-                  to="/services"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/Brochures"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Brochures
-                </Link>
-                <Link
-                  to="/blog"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Blog
-                </Link>
-                <Link
-                  to="/Testimonials"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Testimonials
-                </Link>
-              </div>
-            )}
+              <a onClick={e => e.preventDefault()}>
+                <Space>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-6 w-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M2 4h16v1H2V4zm0 6h16v1H2v-1zm0 6h16v1H2v-1z"
+                    />
+                  </svg>
+                </Space>
+              </a>
+            </Dropdown>
           </div>
         </motion.div>
         <motion.div></motion.div>
