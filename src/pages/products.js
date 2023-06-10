@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import Layout from "../components/Layout"
 import { Card } from "antd"
 import { graphql } from "gatsby"
@@ -40,10 +41,31 @@ const Products = ({ data, location }) => {
     setFilteredProducts(filtered)
   }
 
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    enter: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
     <Layout location={location}>
       <div className="p-20">
-        <div className="flex flex-col lg:flex-row p-4">
+      <div className="flex flex-col lg:flex-row p-4">
           <form className="lg:max-w-sm w-full max-lg:flex max-lg:justify-center px-4">
             <div className="max-w-sm relative">
               <svg
@@ -85,8 +107,9 @@ const Products = ({ data, location }) => {
             </select>
           </div>
         </div>
+
         <div className="flex justify-center px-5 w-full">
-          <div className="text-3xl lg:text-5xl font-semibold text-center">
+          <div className="text-3xl lg:text-5xl font-semibold text-center text-green-600">
             PRODUCTS
           </div>
         </div>
@@ -96,8 +119,14 @@ const Products = ({ data, location }) => {
             {selectedOption}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredProducts.map(product => (
-              <li key={product.id}>
+            {filteredProducts.map((product, index) => (
+              <motion.li
+                key={product.id}
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                custom={index}
+              >
                 <Card
                   hoverable
                   style={{
@@ -125,7 +154,7 @@ const Products = ({ data, location }) => {
                     </Link>
                   </div>
                 </Card>
-              </li>
+              </motion.li>
             ))}
           </div>
         </div>

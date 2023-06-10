@@ -96,7 +96,7 @@ const Header = ({ pathname = "" }) => {
         >
           <Link to="/">
             <StaticImage
-              src="../images/lifekshell-logo.png"
+              src="../images/lifekshell-logo1.png"
               alt="logo"
               placeholder="blurred"
               className="h-22 w-16 ml-2 "

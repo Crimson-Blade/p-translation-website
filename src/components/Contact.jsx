@@ -1,173 +1,171 @@
 import React from "react"
-import { Form, Input, InputNumber, Button } from "antd"
 
 const Contact = () => {
-  const layout = {
-    labelCol: {
-      span: 6,
-    },
-    wrapperCol: {
-      span: 16,
-    },
-  }
-
-  /* eslint-disable no-template-curly-in-string */
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
-    },
-    number: {
-      range: "${label} must be between ${min} and ${max}",
-    },
-  }
-  /* eslint-enable no-template-curly-in-string */
-
-  const onFinish = values => {
-    console.log(values)
-  }
   return (
-    <div className="w-full flex max-md:flex-col py-10 px-52 justify-center gap-4 h-[700px] ">
-      <div className="inline-block bg-slate-100 w-1/2 rounded-xl h-full">
-        <h1 className="text-center font-semibold w-full">
-          Online Inquiry Form
-        </h1>
-        <p className="text-center w-full">Fill out the Form!</p>
-        <Form
-          {...layout}
-          name="nest-messages"
-          onFinish={onFinish}
-          style={{
-            maxWidth: 600,
-            gap: 10,
-          }}
-          validateMessages={validateMessages}
-        >
-          <Form.Item
-            name={["user", "name"]}
-            label="Name"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name={["user", "email"]}
-            label="Email"
-            rules={[
-              {
-                type: "email",
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name={["user", "age"]}
-            label="Age"
-            rules={[
-              {
-                type: "number",
-                min: 0,
-                max: 99,
-              },
-            ]}
-          >
-            <InputNumber />
-          </Form.Item>
-          <Form.Item name={["user", "website"]} label="Website">
-            <Input />
-          </Form.Item>
-          <Form.Item name={["user", "introduction"]} label="Introduction">
-            <Input.TextArea />
-          </Form.Item>
-          <Form.Item
-            wrapperCol={{
-              ...layout.wrapperCol,
-              offset: 8,
-            }}
-          >
-            <Button
-              className="border-2 border-blue-400 text-blue-400"
-              htmlType="submit"
-            >
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-
-      <div className="inline-block px-12 w-1/2 rounded-xl justify-evenly h-full bg-slate-100">
-        <div className="h-1/5 ">
-          <h3 className=" font-semibold w-full mb-0">Contact Us</h3>
-          <h1 className="font-normal mb-0">
-            Get In Touch <span className="font-semibold ">With US</span>
-          </h1>
+    <div className="container mx-auto pt-16">
+      <div className="lg:flex">
+        <div className="xl:w-2/5 lg:w-2/5 bg-indigo-700 py-16 my-auto xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none">
+          <div className="xl:w-5/6 xl:px-0 px-8 mx-auto">
+            <p className="text-white mb-0">CONTACT US</p>
+            <h1 className="xl:text-4xl text-3xl pb-4 text-white font-normal">
+              Get in touch <span className="font-semibold">With Us</span>
+            </h1>
+            <div className="flex pb-2 items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="icon icon-tabler icon-tabler-phone-call"
+                  width={20}
+                  height={20}
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="#ffffff"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
+                  <path d="M15 7a2 2 0 0 1 2 2" />
+                  <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+              </div>
+              <p className="pl-4 text-white text-base">+1 (308) 321 321</p>
+            </div>
+            <div className="flex items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="icon icon-tabler icon-tabler-mail"
+                  width={20}
+                  height={20}
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="#FFFFFF"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <rect x={3} y={5} width={18} height={14} rx={2} />
+                  <polyline points="3 7 12 13 21 7" />
+                </svg>
+              </div>
+              <p className="pl-4 text-white text-base">Info@alphas.com</p>
+            </div>
+            <p className="text-lg text-white pt-10 tracking-wide">
+              Our Location <br /><br />Platinum Venecia, 06, 1st Floor, Plot: 22 & 23, Sector: 29, Nerul,
+              Navi Mumbai  400706, Maharashtra, India.
+            </p>
+          </div>
         </div>
-        <div className="h-4/5 flex flex-col justify-evenly">
-          <div className="flex w-full gap-6">
-            <div className="border rounded-lg border-green-300 w-1/2 p-4 font-semibold text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-                className="inline pr-2 mx-auto"
-              >
-                <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
-              </svg>
-              Call Us
-              <p className="border-green-300 border-dotted border-b-2  text-green-500 font-normal mb-0 pt-2">
-                91 9820076435
-              </p>
+        <div className="xl:w-3/5 lg:w-3/5 bg-gray-200 h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
+          <form
+            id="contact"
+            className="bg-white py-4 px-8 rounded-tr rounded-br"
+          >
+            <h1 className="text-4xl text-gray-800 font-extrabold mb-6">
+              Enter Details
+            </h1>
+            <div className="block xl:flex w-full flex-wrap justify-between mb-6">
+              <div className="w-2/4 max-w-xs mb-6 xl:mb-0">
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="full_name"
+                    className="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
+                  >
+                    Full Name
+                  </label>
+                  <input
+                    required
+                    id="full_name"
+                    name="full_name"
+                    type="text"
+                    className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                    placeholder
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="full_name"
+                    className="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
+                  >
+                    Company Name
+                  </label>
+                  <input
+                    required
+                    id="full_name"
+                    name="full_name"
+                    type="text"
+                    className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                    placeholder
+                  />
+                </div>
+              </div>
+              <div className="w-2/4 max-w-xs xl:flex xl:justify-end">
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="email"
+                    className="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
+                  >
+                    Email
+                  </label>
+                  <input
+                    required
+                    id="email"
+                    name="email"
+                    type="email"
+                    className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                    placeholder
+                  />
+                </div>
+              </div>
             </div>
-            <div className="border rounded-lg border-green-300 w-1/2 p-4 font-semibold text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-                className="inline pr-2 mx-auto"
-              >
-                <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
-              </svg>
-              Business Hours
-              <p className="border-green-300 border-dotted border-b-2  text-green-500 font-normal mb-0 pt-2">
-                9am to 7pm
-              </p>
+            <div className="flex w-full flex-wrap">
+              <div className="w-2/4 max-w-xs">
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="phone"
+                    className="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    required
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                    placeholder
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="border rounded-lg border-green-300 w-full p-4 font-semibold text-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 512 512"
-              className="inline pr-2 mx-auto"
-            >
-              <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-            </svg>
-            Our Email
-            <p className=" font-normal text-green-500 mb-0 pt-2">
-              lifekshell@gmail.com
-            </p>
-          </div>
-          <div className="border rounded-lg border-green-300 w-full p-4 font-semibold text-center mb-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              className="inline pr-2 mx-auto"
-            >
-              <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-            </svg>
-            Our Location
-            <p className=" font-normal mb-0 pt-2">
-              Platinum Venecia, 06, 1st Floor, Plot: 22 & 23, Sector: 29, Nerul,
-              Navi Mumbai – 400706, Maharashtra, India.
-            </p>
-          </div>
+            <div className="w-full mt-6">
+              <div className="flex flex-col">
+                <label
+                  className="text-sm font-semibold text-gray-800 mb-2"
+                  htmlFor="message"
+                >
+                  Message
+                </label>
+                <textarea
+                  placeholder
+                  name="message"
+                  className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-indigo-700"
+                  rows={8}
+                  id="message"
+                  defaultValue={""}
+                />
+              </div>
+              <button
+                type="submit"
+                className="focus:outline-none bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
