@@ -11,12 +11,13 @@ import clip from "../video/Hero-Banner-V5.mp4"
 import heroPlaceholder from "../images/Hero-Placeholder.jpg"
 import CompanyLandscape from "../components/CompanyLandscape"
 import Testimonials from "../components/Testimonials"
+import LogoSlider from '../components/LogoSlider';
 import { Link } from "gatsby"
 
 const Index = ({ location }) => {
   return (
     <Layout location={location}>
-      <section className="flex flex-col justify-center h-screen">
+      <section className="flex flex-col py-40">
         <video
           autoPlay
           loop
@@ -40,7 +41,7 @@ const Index = ({ location }) => {
               <Button size="lg">Get Started</Button>
             </p>
           </div>
-          <div className="lg:w-1/2">{/* <HeroImage /> */}</div>
+          {/* <div className="lg:w-1/2"><HeroImage /></div> */}
         </div>
       </section>
 
@@ -193,7 +194,7 @@ const Index = ({ location }) => {
         </div>
       </section>
 
-      <SplitSection
+      {/* <SplitSection
         id="services"
         primarySlot={
           <div className="lg:pr-32 xl:pr-48">
@@ -236,8 +237,8 @@ const Index = ({ location }) => {
           </div>
         }
         secondarySlot={<SvgCharts />}
-      />
-      <section id="stats" className="py-20 lg:pt-32">
+      /> */}
+      {/* <section id="stats" className="py-20 lg:pt-32">
         <div className="container mx-auto text-center">
           <LabelText className="text-gray-600">
             Our customers get results
@@ -254,8 +255,8 @@ const Index = ({ location }) => {
             </div>
           </div>
         </div>
-      </section>
-      <section id="testimonials" className="py-20 lg:py-40">
+      </section> */}
+      {/* <section id="testimonials" className="py-20 lg:py-40">
         <div className="container mx-auto">
           <LabelText className="mb-8 text-gray-600 text-center">
             What customers are saying
@@ -268,8 +269,16 @@ const Index = ({ location }) => {
             ))}
           </div>
         </div>
+      </section> */}
+      <section className="mx-auto text-center">
+        <CompanyLandscape />
+        <div className="bg-white -translate-y-[200px] pt-20">
+          <Testimonials />
+        </div>
       </section>
-      <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
+      {/* <section className='py-20'>
+    </section> */}
+      <section className="container mx-auto my-10 py-24 bg-gray-200 rounded-lg text-center">
         <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
         <p className="mt-8 text-xl font-light">
           Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque
@@ -279,14 +288,6 @@ const Index = ({ location }) => {
           <Button size="xl">Get Started Now</Button>
         </p>
       </section>
-      <section className="mx-auto py-20  text-center">
-        <CompanyLandscape />
-        <div className="bg-white -translate-y-[200px]">
-          <Testimonials />
-        </div>
-      </section>
-      {/* <section className='py-20'>
-    </section> */}
     </Layout>
   )
 }

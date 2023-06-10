@@ -12,6 +12,15 @@ module.exports = {
           lighter: 'hsl(207, 73%, 52%)',
           darker: 'hsl(207, 73%, 44%)'
         }
+      },
+      animation: {
+        'scroll-slow': 'scroll-slow 5s linear infinite',
+      },
+      keyframes: {
+        'scroll-slow': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(calc(-50%))' },
+        },
       }
     },
   },
