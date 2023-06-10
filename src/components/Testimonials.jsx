@@ -1,13 +1,13 @@
 import React from 'react';
 const Testimonials = () => {
   return (
-    <div class="container mx-auto max-w-7xl p-2 md:p-10">
+    <div class="container mx-auto max-w-7xl p-2 lg:p-10">
       <div
-        class="grid gap-6 grid-cols-1 text-white md:grid-cols-4 md:grid-rows-2"
+        class="grid gap-6 grid-cols-1 text-white lg:grid-cols-4 lg:grid-rows-2"
       >
-        <div class="relative p-10 rounded-xl bg-purple-700 md:col-span-2">
+        <div class="relative p-10 rounded-xl bg-purple-700 lg:col-span-2">
           <div
-            class="absolute top-3 right-10 scale-125 md:top-7 md:right-24 md:scale-150"
+            class="absolute top-3 right-10 scale-125 lg:top-7 md:right-24 lg:scale-150"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="104" height="102"><path d="M104 102V59.727H84.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C95.01 25.86 98.909 22.257 104 19.375V0c-9.758 4.27-17.712 9.874-23.864 16.813-6.151 6.939-10.712 14.545-13.681 22.818C63.485 47.904 62 59.941 62 75.74V102h42zm-62 0V59.727H22.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C33.01 25.86 36.909 22.257 42 19.375V0c-9.652 4.27-17.58 9.874-23.784 16.813C12.01 23.752 7.424 31.358 4.455 39.631 1.485 47.904 0 59.941 0 75.74V102h42z" fill="#A775F1" fill-rule="nonzero" /></svg>
           </div>
@@ -77,7 +77,7 @@ const Testimonials = () => {
         </div>
 
         <div
-          class="hidden p-10 rounded-xl text-gray-900 bg-sky-200 md:block md:row-span-2"
+          class="hidden p-10 rounded-xl text-gray-900 bg-sky-200 lg:block lg:row-span-2"
         >
           <div class="flex space-x-4">
             <img
@@ -133,7 +133,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div class="p-10 rounded-xl bg-gray-900 md:col-span-2">
+        <div class="p-10 rounded-xl bg-gray-900 lg:col-span-2">
           <div class="flex space-x-4">
             <img
               src="images/image-patrick.jpg"
@@ -162,7 +162,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div class="p-10 rounded-xl text-gray-900 bg-sky-200 md:hidden">
+        <div class="p-10 rounded-xl text-gray-900 bg-sky-200 lg:hidden">
           <div class="flex space-x-4">
             <img
               src="images/image-kira.jpg"

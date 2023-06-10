@@ -9,7 +9,7 @@ const services = ({ location}) => {
     <Layout location={location}>
 
       <div className="flex p-6 w-full justify-center">
-        <div className="text-3xl lg:text-5xl font-semibold text-center tracking-wider text-slate-800">
+        <div className="text-3xl lg:text-5xl font-semibold text-center tracking-wider text-green-500">
           SERVICES
         </div>
       </div>
