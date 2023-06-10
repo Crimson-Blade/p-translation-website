@@ -30,7 +30,23 @@ const Contact = () => {
                   <path d="M15 3a6 6 0 0 1 6 6" />
                 </svg>
               </div>
-              <p className="pl-4 text-white text-base">+1 (308) 321 321</p>
+              <p className="pl-4 inline text-white text-base">
+                +1 (308) 321 321
+              </p>
+              <div className="ml-14">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  stroke="#ffffff"
+                  fill="white"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                </svg>
+              </div>
+              <p className="pl-4 inline text-white text-base">
+                Business Hours: 9am to 7pm
+              </p>
             </div>
             <div className="flex items-center">
               <div>
@@ -54,12 +70,15 @@ const Contact = () => {
               <p className="pl-4 text-white text-base">Info@alphas.com</p>
             </div>
             <p className="text-lg text-white pt-10 tracking-wide">
-              Our Location <br /><br />Platinum Venecia, 06, 1st Floor, Plot: 22 & 23, Sector: 29, Nerul,
-              Navi Mumbai  400706, Maharashtra, India.
+              <span className="underline leading-5">Our Location </span>
+              <br />
+              <br />
+              Platinum Venecia, 06, 1st Floor, Plot: 22 & 23, Sector: 29, Nerul,
+              Navi Mumbai 400706, Maharashtra, India.
             </p>
           </div>
         </div>
-        <div className="xl:w-3/5 lg:w-3/5 bg-gray-200 h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
+        <div className="xl:w-3/5 lg:w-3/5 shadow-lg border-4 border-gray-300 h-full pt-3 pb-3 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
           <form
             id="contact"
             className="bg-white py-4 px-8 rounded-tr rounded-br"
