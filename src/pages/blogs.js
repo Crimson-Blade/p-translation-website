@@ -1,12 +1,8 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { Card, Button } from "antd"
-
-import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-
-import "../styles/blog.css" // Import your custom CSS file
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -15,7 +11,6 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -27,14 +22,10 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div
-        className="bg-cover bg-center py-16"
-        style={{ backgroundImage: `url("../images/blog.jpg")` }}
-      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-7xl font-bold text-white">Blog</h1>
+          <h1 className="text-7xl font-bold text-green-500 text-center">Blog</h1>
         </div>
-      </div>
+
       <div className="p-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
