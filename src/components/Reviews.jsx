@@ -22,7 +22,7 @@ class Reviews extends React.Component {
       <div className="container mx-auto mt-20 w-full swiper mySwiper">
         <div className="mb-16 swiper-wrapper">
         <div className="swiper-slide w-1/2 md:w-1/4">
-            <div className="p-4 text-gray-800 border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
+            <div className="p-4 text-gray-800 md:border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
               <div className="mb-2">
                 <p className="mb-2 text-center text-green-800 text-lg ">
                   - Mark J. Gage, Richard S. Yoon, Kenneth A. Egol, Frank A.
@@ -43,7 +43,7 @@ class Reviews extends React.Component {
             </div>
           </div>
           <div className="swiper-slide w-1/2 md:w-1/4">
-            <div className="p-4 text-gray-800 border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
+            <div className="p-4 text-gray-800 md:border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
               <div className="mb-2">
                 <p className="mb-2 text-center text-green-800 text-lg ">
                   - David Brinkert Mazen Ali Magali Naud Nicolas Maire Chloé
@@ -69,7 +69,7 @@ class Reviews extends React.Component {
             </div>
           </div>
           <div className="swiper-slide w-1/2 md:w-1/4">
-            <div className="p-4 text-gray-800 border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
+            <div className="p-4 text-gray-800 md:border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
               <div className="mb-2">
                 <p className="mb-2 text-center text-green-800 text-lg ">
                   - Wound Management & Prevention, Vol 62, Issue 9, 2016 Robert
@@ -90,7 +90,7 @@ class Reviews extends React.Component {
             </div>
           </div>
           <div className="swiper-slide w-1/2 md:w-1/4">
-            <div className="p-4 text-gray-800 border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
+            <div className="p-4 text-gray-800 md:border-l-4 border-gray-600 rounded-l-none rounded-lg shadow-md">
               <div className="mb-2">
                 <p className="mb-2 text-center text-green-800 text-lg ">
                   - Nanda Kishore Maddineni, Satya Kumar Koduru, Harshavardan

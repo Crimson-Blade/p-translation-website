@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus."
 ---
 
 This is my first post on my new fake blog! How exciting!

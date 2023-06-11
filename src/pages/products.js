@@ -166,23 +166,23 @@ const Products = ({ data, location }) => {
 export default Products
 
 export const query = graphql`
-  query ProductsPage {
-    allMarkdownRemark {
-      nodes {
-        frontmatter {
-          title
-          description
-          type
-          thumb {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+query MyQuery {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/products/"}}) {
+    nodes {
+      frontmatter {
+        description
+        thumb {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-        id
+        type
+        title
       }
+      id
     }
   }
+}
 `
