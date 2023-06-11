@@ -1,9 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { Card, Button } from "antd"
 
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+
+import "../styles/blog.css" // Import your custom CSS file
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -24,39 +27,36 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <div
+        className="bg-cover bg-center py-16"
+        style={{ backgroundImage: `url("../images/blog.jpg")` }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-7xl font-bold text-white">Blog</h1>
+        </div>
+      </div>
+      <div className="p-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
+            <Card
+              key={post.fields.slug}
+              title={title}
+              bordered={false}
+              className="max-w-xs " // Apply the custom CSS class here
+            >
+              <small>{post.frontmatter.date}</small>
+              <br />
+              <br />
+              <p>{post.frontmatter.description || post.excerpt}</p>
+              <Link to={post.fields.slug}>
+                <Button>Read More</Button>
+              </Link>
+            </Card>
           )
         })}
-      </ol>
+      </div>
     </Layout>
   )
 }
@@ -80,6 +80,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
       filter: { fileAbsolutePath: { regex: "/blog/" } }
+      limit: 8
     ) {
       nodes {
         excerpt
