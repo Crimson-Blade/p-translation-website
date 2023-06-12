@@ -19,7 +19,7 @@ const Index = ({ location }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handleOnReady = () => {
-    setIsLoaded(true);
+    // setIsLoaded(true);
   };
   return (
     <Layout location={location}>
@@ -34,16 +34,21 @@ const Index = ({ location }) => {
           <source data-src={clip} type="video/mp4" />
         </video> */}
         <div>
-          {!isLoaded && <img src={heroPlaceholder} alt="Placeholder" className={`absolute top-0 left-0 w-full h-full object-cover object-center -z-10`} />}
-          <ReactPlayer
+          {!isLoaded && <img src={heroPlaceholder} alt="Placeholder" className="absolute top-0 left-0 w-full h-full object-cover object-center -z-10" />}
+          {/* <ReactPlayer
             url={clip}
             playing={isLoaded}
             width="100%"
             height="auto"
             volume={0}
-            className={`absolute top-0 left-0 w-full h-full object-cover object-center -z-10`}
+            style={{
+              objectFit:'cover',
+              objectPosition:'center',
+              inset:'0px'
+            }}
+            className="absolute top-0 left-0 w-full h-full inset-0 -z-10"
             onReady={handleOnReady}
-          />
+          /> */}
         </div>
         <div className="absolute left-0 top-0 w-full h-full bg-sky-900/30 -z-10" />
         <div className="container mx-auto px-8 lg:flex">
