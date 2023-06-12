@@ -1,18 +1,19 @@
 import React from "react"
 import Button from "../components/Button"
-import CustomerCard from "../components/CustomerCard"
-import LabelText from "../components/LabelText"
+// import CustomerCard from "../components/CustomerCard"
+// import LabelText from "../components/LabelText"
 import Layout from "../components/Layout"
-import SplitSection from "../components/SplitSection"
-import StatsBox from "../components/StatsBox"
-import customerData from "../data/customer-data.jsx"
-import SvgCharts from "../svg/SvgCharts"
+// import SplitSection from "../components/SplitSection"
+// import StatsBox from "../components/StatsBox"
+// import customerData from "../data/customer-data.jsx"
+// import SvgCharts from "../svg/SvgCharts"
 import clip from "../video/Hero-Banner-V5.mp4"
 import heroPlaceholder from "../images/Hero-Placeholder.jpg"
 import CompanyLandscape from "../components/CompanyLandscape"
 import Testimonials from "../components/Testimonials"
-import LogoSlider from '../components/LogoSlider';
+// import LogoSlider from '../components/LogoSlider';
 import { Link } from "gatsby"
+import Seo from '../components/Seo';
 
 const Index = ({ location }) => {
   return (
@@ -80,7 +81,7 @@ const Index = ({ location }) => {
               </p>
 
               <Link
-                to="#"
+                to="/services"
                 className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
               >
                 <svg
@@ -123,7 +124,7 @@ const Index = ({ location }) => {
               </p>
 
               <Link
-                to="#"
+                to="/services"
                 className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
               >
                 <svg
@@ -166,7 +167,7 @@ const Index = ({ location }) => {
               </p>
 
               <Link
-                to="#"
+                to="/services"
                 className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500"
               >
                 <svg
@@ -272,14 +273,14 @@ const Index = ({ location }) => {
       </section> */}
       <section className="mx-auto text-center">
         <CompanyLandscape />
-        <div className="bg-white -translate-y-[200px] pt-20">
+        <div className="bg-white md:-translate-y-[200px] pt-20">
           <Testimonials />
         </div>
       </section>
       {/* <section className='py-20'>
     </section> */}
       <section className="container mx-auto my-10 py-24 bg-gray-200 rounded-lg text-center">
-        <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
+        <h3 className="text-5xl font-semibold">Something なんとか Something なんとか?</h3>
         <p className="mt-8 text-xl font-light">
           Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque
           fermentum dui faucibus in.
@@ -293,3 +294,5 @@ const Index = ({ location }) => {
 }
 
 export default Index
+
+export const Head = () => <Seo title='Home' />

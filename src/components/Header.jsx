@@ -84,7 +84,7 @@ const Header = ({ pathname = "" }) => {
 
   return (
     <header className="sticky top-0 flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
-      <div className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
+      <Link to='/services/#contact' className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
         <motion.div
           initial={{
             x: 100,
@@ -124,13 +124,13 @@ const Header = ({ pathname = "" }) => {
             </p>
           </div>
         </motion.div>
-      </div>
+
+      </Link>
       <div
-        className={`${
-          isScrolled || pathname !== "/"
-            ? "flex w-full justify-between bg-white text-gray-900 shadow-lg transition duration-300 ease-in-out px-2"
-            : "flex w-full md:justify-between bg-transparent border border-gray-600 text-white transition duration-300 ease-in-out px-2"
-        }`}
+        className={`${isScrolled || pathname !== "/"
+          ? "flex w-full justify-between bg-white text-gray-900 shadow-lg transition duration-300 ease-in-out px-2"
+          : "flex w-full md:justify-between bg-transparent border border-gray-600 text-white transition duration-300 ease-in-out px-2"
+          }`}
       >
         <motion.div
           initial={{
@@ -159,9 +159,9 @@ const Header = ({ pathname = "" }) => {
         </motion.div>
         <motion.div
           initial={{
-            y: -300,
+            y: -30,
             opacity: 0,
-            scale: 0.5,
+            scale: 0.75,
           }}
           animate={{
             y: 0,
@@ -169,7 +169,7 @@ const Header = ({ pathname = "" }) => {
             scale: 1,
           }}
           transition={{
-            duration: 1,
+            duration: 0.5,
           }}
           className="flex flex-row items-center max-md:w-auto max-md:ml-auto max-md:mr-5"
         >

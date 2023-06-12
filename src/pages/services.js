@@ -3,6 +3,7 @@ import SplitSection from "../components/SplitSection"
 import SvgCharts from "../svg/SvgCharts"
 import Layout from "../components/Layout"
 import Contact from "../components/Contact"
+import Seo from "../components/Seo"
 
 const services = ({ location}) => {
   return (
@@ -65,6 +66,7 @@ const services = ({ location}) => {
           secondarySlot={<SvgCharts />}
         />
       </div>
+
       <Contact />
 
       
@@ -73,3 +75,5 @@ const services = ({ location}) => {
 }
 
 export default services
+export const Head = () => <Seo title="Services" />
+

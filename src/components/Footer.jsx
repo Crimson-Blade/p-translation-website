@@ -1,7 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
 import {SocialIcon} from "react-social-icons";
-
 
 const Footer = () => {
   return (
@@ -9,39 +7,44 @@ const Footer = () => {
       <div className="max-w-screen-xl px-4 py-6 mx-auto space-y-3 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2 pt-4">
           <div className="px-5 py-2">
-            <Link to="/"
+            <a
+              href="/"
               className="text-base leading-6 0  hover:underline text-gray-50"
             >
               About
-            </Link>
+            </a>
           </div>
           <div className="px-5 py-2">
-            <Link to="/"
+            <a
+              href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Blog
-            </Link>
+            </a>
           </div>
           <div className="px-5 py-2">
-            <Link to="/"
+            <a
+              href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Products
-            </Link>
+            </a>
           </div>
           <div className="px-5 py-2">
-            <Link to="/"
+            <a
+              href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Brochures
-            </Link>
+            </a>
           </div>
           <div className="px-5 py-2">
-            <Link to="/"
+            <a
+              href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Contact
-            </Link>
+            </a>
           </div>
 
         </nav>
@@ -64,7 +67,7 @@ const Footer = () => {
 
         </div>
         <p className="m-auto text-center py-2">
-        © {new Date().getFullYear()} LifekShell. All Rights Reserved.  
+        © {new Date().getFullYear()} Life Shell International. All Rights Reserved.  
         </p>
       </div>
     </section>

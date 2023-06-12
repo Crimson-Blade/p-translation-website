@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import { Card } from "antd"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import Seo from "../components/Seo"
 const { Meta } = Card
 
 const Products = ({ data, location }) => {
@@ -164,7 +165,7 @@ const Products = ({ data, location }) => {
 }
 
 export default Products
-
+export const Head = () => <Seo title="Products" />
 export const query = graphql`
 query MyQuery {
   allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/products/"}}) {
