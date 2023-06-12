@@ -1,33 +1,50 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Button from "../components/Button"
+import Layout from "../components/Layout"
+import clip from "../video/Hero-Banner-V5.mp4"
+import CompanyLandscape from "../components/CompanyLandscape"
+import Testimonials from "../components/Testimonials"
+import { Link } from "gatsby"
+import Seo from '../components/Seo';
+import ReactPlayer from 'react-player/lazy'
+import heroPlaceholder from "../images/Hero-Placeholder.jpg"
 // import CustomerCard from "../components/CustomerCard"
 // import LabelText from "../components/LabelText"
-import Layout from "../components/Layout"
 // import SplitSection from "../components/SplitSection"
 // import StatsBox from "../components/StatsBox"
 // import customerData from "../data/customer-data.jsx"
 // import SvgCharts from "../svg/SvgCharts"
-import clip from "../video/Hero-Banner-V5.mp4"
-import heroPlaceholder from "../images/Hero-Placeholder.jpg"
-import CompanyLandscape from "../components/CompanyLandscape"
-import Testimonials from "../components/Testimonials"
 // import LogoSlider from '../components/LogoSlider';
-import { Link } from "gatsby"
-import Seo from '../components/Seo';
-
 const Index = ({ location }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleOnReady = () => {
+    setIsLoaded(true);
+  };
   return (
     <Layout location={location}>
       <section className="flex flex-col py-40">
-        <video
+        {/* <video 
           autoPlay
           loop
           muted
           poster={heroPlaceholder}
-          className="absolute top-0 left-0 w-full h-full object-cover object-center -z-10"
+          className={`lazy ${isLoaded ? '' : 'lazy-loading'} absolute top-0 left-0 w-full h-full object-cover object-center -z-10`}
         >
-          <source src={clip} type="video/mp4" />
-        </video>
+          <source data-src={clip} type="video/mp4" />
+        </video> */}
+        <div>
+          {!isLoaded && <img src={heroPlaceholder} alt="Placeholder" className={`absolute top-0 left-0 w-full h-full object-cover object-center -z-10`} />}
+          <ReactPlayer
+            url={clip}
+            playing={isLoaded}
+            width="100%"
+            height="auto"
+            volume={0}
+            className={`absolute top-0 left-0 w-full h-full object-cover object-center -z-10`}
+            onReady={handleOnReady}
+          />
+        </div>
         <div className="absolute left-0 top-0 w-full h-full bg-sky-900/30 -z-10" />
         <div className="container mx-auto px-8 lg:flex">
           <div className="text-center lg:text-left lg:w-1/2">
