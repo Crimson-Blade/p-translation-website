@@ -150,9 +150,12 @@ const Header = ({ pathname = "" }) => {
         >
           <Link to="/">
             <StaticImage
-              src="../images/lifekshell-logo1.png"
+              src="../images/lifeshell-icon.png"
               alt="logo"
+              width={64}
+              height={64}
               placeholder="blurred"
+
               className="h-22 w-16 ml-2 "
             />
           </Link>
