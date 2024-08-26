@@ -16,7 +16,7 @@ const Button = ({ children, className = '', size }) => {
         bg-primary
         hover:bg-primary-darker
         rounded
-        text-white
+        text-black
     `}
     >
       {children}

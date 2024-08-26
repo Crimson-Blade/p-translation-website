@@ -10,25 +10,15 @@ const Header = ({ pathname = "" }) => {
     {
       label: (
         <Link
-          to="/about"
+          to="/"
           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
         >
-          About
+          Home
         </Link>
       ),
       key: "0",
     },
-    {
-      label: (
-        <Link
-          to="/products"
-          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-        >
-          Products
-        </Link>
-      ),
-      key: "1",
-    },
+    
     {
       label: (
         <Link
@@ -38,30 +28,30 @@ const Header = ({ pathname = "" }) => {
           Services
         </Link>
       ),
-      key: "2",
+      key: "1",
     },
-    {
-      label: (
-        <Link
-          to="/blogs"
-          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-        >
-          Blog
-        </Link>
-      ),
-      key: "3",
-    },
-    {
-      label: (
-        <Link
-          to="/testimonialspage"
-          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-        >
-          Testimonials
-        </Link>
-      ),
-      key: "4",
-    },
+    // {
+    //   label: (
+    //     <Link
+    //       to="/blogs"
+    //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+    //     >
+    //       Blog
+    //     </Link>
+    //   ),
+    //   key: "3",
+    // },
+    // {
+    //   label: (
+    //     <Link
+    //       to="/testimonialspage"
+    //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+    //     >
+    //       Testimonials
+    //     </Link>
+    //   ),
+    //   key: "4",
+    // },
   ]
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -84,7 +74,7 @@ const Header = ({ pathname = "" }) => {
 
   return (
     <header className="sticky top-0 flex flex-col item-start justify-between mx-auto z-20 xl:items-center">
-      <Link to='/services/#contact' className="flex w-full bg-gradient-to-r from-teal-700 to-sky-900 px-3">
+      <Link to='/services/#contact' className="flex w-full bg-gradient-to-r from-amber-400 to-orange-700 px-3">
         <motion.div
           initial={{
             x: 100,
@@ -120,7 +110,7 @@ const Header = ({ pathname = "" }) => {
               bgColor="transparent"
             />
             <p className="uppercase hidden md:inline-flex my-auto text-sm font-semibold text-white hover:underline duration-200">
-              +91 9820076435
+              +91 9746694804
             </p>
           </div>
         </motion.div>
@@ -150,13 +140,13 @@ const Header = ({ pathname = "" }) => {
         >
           <Link to="/">
             <StaticImage
-              src="../images/lifeshell-icon.png"
+              src="../images/icon.png"
               alt="logo"
-              width={64}
-              height={64}
+              // width={64}
+              // height={64}
               placeholder="blurred"
 
-              className="h-22 w-16 ml-2 "
+              className="h-22 w-16 ml-2 m-2 rounded-3xl"
             />
           </Link>
         </motion.div>
@@ -178,24 +168,19 @@ const Header = ({ pathname = "" }) => {
         >
           <nav className="hidden md:flex">
             <Link
-              to="/about"
+              to="/"
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
-              About Us
+              Home
             </Link>
-            <Link
-              to="/products"
-              className="uppercase px-4 my-auto text-sm hover:underline duration-200"
-            >
-              Products
-            </Link>
+            
             <Link
               to="/services"
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
               Services
             </Link>
-            <Link
+            {/* <Link
               to="/blogs"
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
@@ -206,7 +191,7 @@ const Header = ({ pathname = "" }) => {
               className="uppercase px-4 my-auto text-sm hover:underline duration-200"
             >
               Testimonials
-            </Link>
+            </Link> */}
           </nav>
           <div className="md:hidden right-0 ">
             <Dropdown

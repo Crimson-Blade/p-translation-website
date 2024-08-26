@@ -3,7 +3,7 @@ import {SocialIcon} from "react-social-icons";
 
 const Footer = () => {
   return (
-    <section className="bg-gradient-to-r from-teal-700 to-sky-900 text-gray-50">
+    <section className="bg-gradient-to-r from-amber-400 to-orange-700 text-gray-50">
       <div className="max-w-screen-xl px-4 py-6 mx-auto space-y-3 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2 pt-4">
           <div className="px-5 py-2">
@@ -11,36 +11,36 @@ const Footer = () => {
               href="/"
               className="text-base leading-6 0  hover:underline text-gray-50"
             >
-              About
+              Home
             </a>
           </div>
-          <div className="px-5 py-2">
+          {/* <div className="px-5 py-2">
             <a
               href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Blog
             </a>
-          </div>
+          </div> */}
           <div className="px-5 py-2">
             <a
-              href="/"
+              href="/services"
               className="text-base leading-6 hover:underline text-gray-50"
             >
-              Products
+              Products and Services
             </a>
           </div>
-          <div className="px-5 py-2">
+          {/* <div className="px-5 py-2">
             <a
               href="/"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Brochures
             </a>
-          </div>
+          </div> */}
           <div className="px-5 py-2">
             <a
-              href="/"
+              href="/services#contact"
               className="text-base leading-6 hover:underline text-gray-50"
             >
               Contact

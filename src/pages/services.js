@@ -4,13 +4,16 @@ import SvgCharts from "../svg/SvgCharts"
 import Layout from "../components/Layout"
 import Contact from "../components/Contact"
 import Seo from "../components/Seo"
+import image1 from "../images/oil-cooler.jpeg"
+import image2 from "../images/charge-air-cooler.jpeg"
+import image3 from "../images/after-cooler.jpeg"
 
-const services = ({ location}) => {
+const services = ({ location }) => {
   return (
     <Layout location={location}>
 
       <div className="flex p-6 w-full justify-center">
-        <div className="text-3xl lg:text-5xl font-semibold text-center tracking-wider text-green-500">
+        <div className="text-3xl lg:text-5xl font-semibold text-center tracking-wider text-amber-500">
           SERVICES
         </div>
       </div>
@@ -20,56 +23,62 @@ const services = ({ location}) => {
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-3xl font-semibold leading-tight">
-              Dressing Services
+                Oil Coolers
               </h3>
               <p className="mt-8 text-xl font-light leading-relaxed">
-              Delivering personalized dressing services for optimal wound care
-              and accelerated healing.
-              Delivering personalized dressing services for optimal wound care
-              and accelerated healing.
+                It is safe to say that Oil Coolers are definitely our forte.
+                Our Oil Coolers have a record of performing above expectations within the most severest of conditions. We manufacture Oil Coolers of all the latest technologies viz, plate-bar type, multi-port type, brazed plate type and the dual plate cross flow dimpled type.
+                Whatever be
+                your performance
+                requirement and
+                however severe be your constraints, we are sure of giving you a solution you can be satisfied with.
               </p>
             </div>
           }
-          secondarySlot={<SvgCharts />}
+          secondarySlot={<img src={image1} alt="oil cooler" />}
         />
         <SplitSection
           reverseOrder
           primarySlot={
             <div className="lg:pl-32 xl:pl-48">
               <h3 className="text-3xl font-semibold leading-tight">
-              Distribution
+                Charge Air Cooler
               </h3>
               <p className="mt-8 text-xl font-light leading-relaxed">
-              Efficiently distributing NPWT products and medical supplies for
-              seamless access to critical resources.
-              Efficiently distributing NPWT products and medical supplies for
-              seamless access to critical resources.
+                We manufacture high quality, high performance custom Intercoolers,
+                Charge Air Coolers and After coolers for
+                any application and project you might have in mind.
+                Our Intercoolers, after coolers and Charge Air Coolers are designed to ensure smooth flow of fluid inside the flow channels and headers so that there is minimal pressure drop across the
               </p>
             </div>
           }
-          secondarySlot={<SvgCharts />}
+          secondarySlot={<img src={image2} alt="charge " />}
         />
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-3xl font-semibold leading-tight">
-              Hospital Supplies
+                After Cooler
               </h3>
               <p className="mt-8 text-xl font-light leading-relaxed">
-              Supplying a comprehensive range of high-quality hospital supplies
-              for exceptional patient care.
-              Supplying a comprehensive range of high-quality hospital supplies
-              for exceptional patient care.
+                We offer specialized and custom built solutions for all your cooling needs.
+                Be
+                it compact and high
+                performance solution for automotive and aerospace applications or
+                for highly
+                reliable and durable
+                applications for industrial, marine or agricultural applications.
+                Get in touch with our sales team and we are sure we will be able to provide you the best
               </p>
             </div>
           }
-          secondarySlot={<SvgCharts />}
+          secondarySlot={<img src={image3} alt="oil cooler" />}
         />
       </div>
 
       <Contact />
 
-      
+
     </Layout>
   )
 }

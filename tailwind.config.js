@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'hsl(207, 73%, 57%)',
-          lighter: 'hsl(207, 73%, 52%)',
-          darker: 'hsl(207, 73%, 44%)'
+          DEFAULT: 'hsl(43, 100%, 96%)',
+          lighter: 'hsl(41, 87%, 77%)',
+          darker: 'hsl(41, 87%, 77%)'
         }
       },
       animation: {
