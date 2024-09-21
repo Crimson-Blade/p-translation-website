@@ -67,7 +67,7 @@ const Contact = () => {
                   <polyline points="3 7 12 13 21 7" />
                 </svg>
               </div>
-              <p className="pl-4 text-white text-base">lifekshell@gmail.com</p>
+              <p className="pl-4 text-white text-base">ptranslation.sales@gmail.com</p>
             </div>
             <p className="text-lg text-white pt-10 tracking-wide">
               <span className="underline leading-5">Our Location </span>
@@ -78,8 +78,10 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div className="xl:w-3/5 lg:w-3/5 shadow-lg border-4 border-gray-300 h-full pt-3 pb-3 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
-          <form
+        <div className=" shadow-lg border-4 border-gray-300 h-full pt-3 pb-3  rounded-tr rounded-br">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddgxXLnFvIHMmnHRZO_ZsIYbFkeRbHmVi7FUHbtj4SG7bYvg/viewform?embedded=true" width="640" height="1002" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          
+          {/* <form
             id="contact"
             className="bg-white py-4 px-8 rounded-tr rounded-br"
           >
@@ -184,7 +186,7 @@ const Contact = () => {
                 Submit
               </button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>

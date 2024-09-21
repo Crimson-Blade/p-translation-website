@@ -9,19 +9,19 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Life Shell International`,
+    title: `PTranslation`,
     author: {
       name: ``,
       summary: ``,
     },
-    description: `Official site of Life Shell International`,
-    siteUrl: `https://LifeShellInternational.com`,
+    description: `Official site of PTranslation`,
+    siteUrl: `https://ptranslation.in`,
     social: {
       twitter: ``,
     },
   },
   plugins: [
-    "gatsby-plugin-postcss",
+    "gatsby-plugin-postcss",life
     `gatsby-plugin-image`,
     // {
     //   resolve: `gatsby-source-filesystem`,
