@@ -286,7 +286,7 @@ const Index = ({ location }) => {
       </section> */}
       {/* <section className='py-20'>
     </section> */}
-      <section className="container mx-auto my-10 py-24 bg-gray-200 rounded-lg text-center">
+      {/* <section className="container mx-auto my-10 py-24 bg-gray-200 rounded-lg text-center">
         <h3 className="text-5xl font-semibold">Something なんとか Something なんとか?</h3>
         <p className="mt-8 text-xl font-light">
           Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque
@@ -295,7 +295,7 @@ const Index = ({ location }) => {
         <p className="mt-8">
           <Button size="xl">Get Started Now</Button>
         </p>
-      </section>
+      </section> */}
     </Layout>
   )
 }
