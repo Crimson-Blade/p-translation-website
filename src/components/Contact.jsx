@@ -69,13 +69,13 @@ const Contact = () => {
               </div>
               <p className="pl-4 text-white text-base">ptranslation.sales@gmail.com</p>
             </div>
-            <p className="text-lg text-white pt-10 tracking-wide">
+            {/* <p className="text-lg text-white pt-10 tracking-wide">
               <span className="underline leading-5">Our Location </span>
               <br />
               <br />
               Platinum Venecia, 06, 1st Floor, Plot: 22 & 23, Sector: 29, Nerul,
               Navi Mumbai 400706, Maharashtra, India.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className=" shadow-lg border-4 border-gray-300 h-full pt-3 pb-3  rounded-tr rounded-br">

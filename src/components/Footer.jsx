@@ -67,7 +67,7 @@ const Footer = () => {
 
         </div>
         <p className="m-auto text-center py-2">
-        © {new Date().getFullYear()} Life Shell International. All Rights Reserved.  
+        © {new Date().getFullYear()} PTranslation. All Rights Reserved.  
         </p>
       </div>
     </section>
